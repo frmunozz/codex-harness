@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Commit"
+  short_description: "Adaptive commit grouping and conventional messages"
+  default_prompt: "Use $git-commit to analyze my changes and draft grouped commit messages."

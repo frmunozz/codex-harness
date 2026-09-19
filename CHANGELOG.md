@@ -11,6 +11,8 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Added
 
+- **2026-09-19:** Added the harness-owned `git-commit` skill with supporting
+  agent metadata for reviewable Conventional Commit workflows.
 - **2026-09-19:** Added the read-only `codex-harness-audit` skill, policy
   recommendations, optional OpenCodex documentation, pinned Matt Pocock skill
   metadata, and explicit plugin/configuration reconciliation guidance.
@@ -47,6 +49,8 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Removed
 
+- **2026-09-19:** Removed the unused `sites` plugin from the desired source
+  profile manifest.
 - **2026-09-19:** Removed the committed skill lock and obsolete skill copies
   while retaining the source trees needed for installation.
 - **2026-09-19:** Removed the vendored Ponytail plugin snapshot; plugin state is
