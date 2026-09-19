@@ -1,0 +1,24 @@
+skills/custom/git-commit/agents/openai.yaml
+  s_02436429daa455::t_3b3c5fb442aece 1-4
+skills/custom/git-commit/SKILL.md
+  s_02436429daa455::t_4444270dd2d511 17,100
+  s_02436429daa455::t_3b3c5fb442aece 1-16,18-99,101-165
+CHANGELOG.md
+  s_02436429daa455::t_0dd83da139e168 14-15,52-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a3edf45df72dfbac5a23be12764b66b714ce2bd8",
+  "prompts": {},
+  "sessions": {
+    "s_02436429daa455": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0bbb7-a870-7e31-85d7-eceb2a926d27",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
