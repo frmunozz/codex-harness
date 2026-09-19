@@ -10,7 +10,7 @@ import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Dict, Iterable, List, Tuple
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
@@ -23,39 +23,17 @@ MANAGED: Tuple[Tuple[str, Path, Path], ...] = (
     ("codex", Path("AGENTS.md"), Path("instructions/AGENTS.md")),
     ("codex", Path("agents"), Path("agents")),
     ("codex", Path("hooks"), Path("hooks")),
-    ("agents", Path("skills"), Path("skills")),
 )
 
-# Config is preserved for rollback, but merged by the install skill instead of
-# being copied over a user's machine-specific settings.
-BACKUP_ONLY: Tuple[Tuple[str, Path], ...] = (("codex", Path("config.toml")),)
+REMOVE: Tuple[Tuple[str, Path, str], ...] = (
+    ("codex", Path("hooks.json"), "file"),
+)
 
-# Files owned by older harness versions. Remove only these exact paths during
-# install so unrelated user files survive the migration.
-LEGACY_FILES: Tuple[Tuple[str, Path], ...] = (
-    ("codex", Path("RTK.md")),
-    ("codex", Path("CAVEMAN_FULL.md")),
-    ("codex", Path("CAVEMAN_ULTRA.md")),
-    ("codex", Path("hooks/rtk_enforce.py")),
-    ("agents", Path("skills/caveman/SKILL.md")),
-    *tuple(
-        ("codex", Path("prompts") / name)
-        for name in (
-            "openspec-apply.md",
-            "openspec-archive.md",
-            "openspec-proposal.md",
-            "opsx-apply.md",
-            "opsx-archive.md",
-            "opsx-bulk-archive.md",
-            "opsx-continue.md",
-            "opsx-explore.md",
-            "opsx-ff.md",
-            "opsx-new.md",
-            "opsx-onboard.md",
-            "opsx-sync.md",
-            "opsx-verify.md",
-        )
-    ),
+# Backed up and restorable, but never copied from the package during install.
+BACKUP_ONLY: Tuple[Tuple[str, Path, str], ...] = (
+    ("agents", Path("skills"), "directory"),
+    ("codex", Path("skills"), "directory"),
+    ("agents", Path(".skill-lock.json"), "file"),
 )
 
 
@@ -88,11 +66,12 @@ def managed_files() -> Iterable[Tuple[str, Path, Path, Path]]:
             yield scope, target_root / path.relative_to(source), path, source
 
 
-def backup_files() -> Iterable[Tuple[str, Path]]:
-    for scope, relative, _, _ in managed_files():
-        yield scope, relative
+def backup_targets() -> Iterable[Tuple[str, Path, str]]:
+    for scope, relative, source in MANAGED:
+        yield scope, relative, "directory" if (PACKAGE_ROOT / source).is_dir() else "file"
+    yield "codex", Path("config.toml"), "file"
+    yield from REMOVE
     yield from BACKUP_ONLY
-    yield from LEGACY_FILES
 
 
 def target_path(scope: str, relative: Path) -> Path:
@@ -107,6 +86,23 @@ def ensure_safe_roots() -> None:
             raise RuntimeError(
                 f"Refusing to install into {name} inside the harness repository: {resolved}"
             )
+
+
+def path_exists(path: Path) -> bool:
+    return path.exists() or path.is_symlink()
+
+
+def copy_path(source: Path, destination: Path) -> None:
+    """Copy a file/tree while preserving symlinks used by skills."""
+    if source.is_symlink():
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.symlink_to(os.readlink(source), target_is_directory=source.is_dir())
+    elif source.is_dir():
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(source, destination, symlinks=True)
+    else:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination, follow_symlinks=False)
 
 
 def timestamp() -> str:
@@ -135,18 +131,26 @@ def create_backup() -> Path:
     backup = new_backup_dir()
     entries: List[Dict[str, object]] = []
 
-    for scope, relative in backup_files():
+    for scope, relative, expected_kind in backup_targets():
         target = target_path(scope, relative)
-        exists = target.is_file()
+        exists = path_exists(target)
+        if exists:
+            kind = "directory" if target.is_dir() else "file"
+            if kind != expected_kind and (scope, relative, expected_kind) not in REMOVE:
+                raise RuntimeError(f"Unexpected target type for {target}: expected {expected_kind}")
+        else:
+            kind = expected_kind
         entry: Dict[str, object] = {
             "scope": scope,
             "path": relative.as_posix(),
             "existed": exists,
+            "kind": kind,
         }
         if exists:
             saved = backup / scope / relative
-            saved.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(target, saved)
+            copy_path(target, saved)
+        elif kind == "directory":
+            (backup / scope / relative).mkdir(parents=True, exist_ok=True)
         entries.append(entry)
 
     write_json(
@@ -171,20 +175,28 @@ def copy_package_to_targets() -> int:
     return count
 
 
-def remove_legacy_files() -> int:
+def remove_target(target: Path) -> None:
+    if target.is_symlink() or target.is_file():
+        target.unlink()
+    elif target.is_dir():
+        shutil.rmtree(target)
+    elif path_exists(target):
+        raise RuntimeError(f"Refusing to remove unsupported target: {target}")
+
+
+def remove_install_targets() -> int:
     removed = 0
-    for scope, relative in LEGACY_FILES:
+    for scope, relative, source in MANAGED:
+        if (PACKAGE_ROOT / source).is_dir():
+            target = target_path(scope, relative)
+            if target.exists():
+                remove_target(target)
+                removed += 1
+    for scope, relative, _ in REMOVE:
         target = target_path(scope, relative)
-        if target.is_file():
-            target.unlink()
+        if target.exists():
+            remove_target(target)
             removed += 1
-    for scope, relative in (
-        ("codex", Path("prompts")),
-        ("agents", Path("skills/caveman")),
-    ):
-        target = target_path(scope, relative)
-        if target.is_dir() and not any(target.iterdir()):
-            target.rmdir()
     return removed
 
 
@@ -209,7 +221,6 @@ def sync_targets_to_package() -> int:
             if path.is_file()
             and ".git" not in path.parts
             and "__pycache__" not in path.parts
-            and (scope, relative / path.relative_to(target)) not in LEGACY_FILES
         ]
         target_relative = {path.relative_to(target) for path in target_files}
         for path in target_files:
@@ -234,37 +245,36 @@ def confirm(prompt: str, yes: bool) -> None:
 
 
 def backup_id_from_arg(value: str) -> Path:
-    if value == "latest":
-        candidates = sorted((p for p in BACKUP_ROOT.iterdir() if p.is_dir()), reverse=True)
-        if not candidates:
-            raise RuntimeError(f"No backups found in {BACKUP_ROOT}")
-        return candidates[0]
+    if Path(value).name != value or Path(value).is_absolute():
+        raise RuntimeError(f"Invalid backup ID: {value}")
     path = BACKUP_ROOT / value
     if not path.is_dir():
         raise RuntimeError(f"Backup not found: {path}")
     return path
 
 
-def rollback(backup: Path) -> int:
+def read_manifest(backup: Path) -> List[Dict[str, object]]:
     manifest_path = backup / "manifest.json"
     if not manifest_path.is_file():
         raise RuntimeError(f"Invalid backup: {manifest_path} missing")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    return list(manifest.get("entries", []))
+
+
+def rollback(backup: Path) -> int:
     restored = 0
-    for entry in manifest.get("entries", []):
+    for entry in read_manifest(backup):
         scope = str(entry["scope"])
         relative = Path(str(entry["path"]))
         target = target_path(scope, relative)
         saved = backup / scope / relative
         if entry.get("existed"):
-            if not saved.is_file():
+            if not path_exists(saved):
                 raise RuntimeError(f"Backup entry missing: {saved}")
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(saved, target)
-        elif target.exists():
-            if not target.is_file():
-                raise RuntimeError(f"Refusing to remove non-file target: {target}")
-            target.unlink()
+            remove_target(target)
+            copy_path(saved, target)
+        elif path_exists(target):
+            remove_target(target)
         restored += 1
     return restored
 
@@ -293,21 +303,26 @@ def cmd_install(args: argparse.Namespace) -> None:
     if args.dry_run:
         for scope, relative, source, _ in managed_files():
             print(f"{target_path(scope, relative)} <= {source}")
-        for scope, relative in LEGACY_FILES:
-            target = target_path(scope, relative)
-            if target.is_file():
-                print(f"REMOVE {target}")
+        for scope, relative, _ in BACKUP_ONLY:
+            if path_exists(target_path(scope, relative)):
+                print(f"BACKUP {target_path(scope, relative)}")
+        for scope, relative, source in MANAGED:
+            if (PACKAGE_ROOT / source).is_dir() and target_path(scope, relative).exists():
+                print(f"REPLACE {target_path(scope, relative)}")
+        for scope, relative, _ in REMOVE:
+            if target_path(scope, relative).exists():
+                print(f"REMOVE {target_path(scope, relative)}")
         return
     confirm(
         f"Install {PACKAGE_ROOT.name} into {CODEX_HOME} and {AGENTS_HOME}?",
         args.yes,
     )
     backup = create_backup()
+    removed = remove_install_targets()
     count = copy_package_to_targets()
-    removed = remove_legacy_files()
     print(f"backup: {backup.name}")
     print(f"installed files: {count}")
-    print(f"removed legacy files: {removed}")
+    print(f"replaced/removed paths: {removed}")
 
 
 def cmd_list_backups(_: argparse.Namespace) -> None:
@@ -323,10 +338,14 @@ def cmd_rollback(args: argparse.Namespace) -> None:
     backup = backup_id_from_arg(args.backup_id)
     if args.dry_run:
         print(f"would rollback: {backup.name}")
+        for entry in read_manifest(backup):
+            target = target_path(str(entry["scope"]), Path(str(entry["path"])))
+            action = "RESTORE" if entry.get("existed") else "REMOVE"
+            print(f"{action} {target}")
         return
     confirm(f"Rollback {backup.name}?", args.yes)
     count = rollback(backup)
-    print(f"rolled back files: {count}")
+    print(f"rolled back entries: {count}")
 
 
 def cmd_sync(args: argparse.Namespace) -> None:
@@ -347,7 +366,6 @@ def cmd_sync(args: argparse.Namespace) -> None:
                 if path.is_file()
                 and ".git" not in path.parts
                 and "__pycache__" not in path.parts
-                and (scope, relative / path.relative_to(target)) not in LEGACY_FILES
             }
             for relative_path in sorted(target_files):
                 print(f"{source / relative_path} <= {target / relative_path}")
@@ -377,7 +395,7 @@ def parser() -> argparse.ArgumentParser:
     install.set_defaults(handler=cmd_install)
 
     rollback_cmd = commands.add_parser("rollback")
-    rollback_cmd.add_argument("backup_id", nargs="?", default="latest")
+    rollback_cmd.add_argument("backup_id")
     rollback_cmd.add_argument("--yes", action="store_true")
     rollback_cmd.add_argument("--dry-run", action="store_true")
     rollback_cmd.set_defaults(handler=cmd_rollback)

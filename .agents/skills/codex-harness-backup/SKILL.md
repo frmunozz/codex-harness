@@ -1,6 +1,6 @@
 ---
 name: codex-harness-backup
-description: Create a new configuration-only backup of the current local Codex setup.
+description: Create a backup of the current local Codex setup, including user skill stores.
 disable-model-invocation: true
 ---
 
@@ -10,6 +10,6 @@ Use the repository root as the working directory. Use the available Python comma
 
 1. Run `$PYTHON scripts/codex_harness.py status` and confirm the target roots.
 2. Run `$PYTHON scripts/codex_harness.py backup`.
-3. Report the backup ID and path. Explain that `config.toml` is included for rollback, while credentials, session databases, caches, worktrees, and runtime binaries are outside the backup scope.
+3. Report the backup ID and path. Explain that `config.toml`, `.agents/skills/`, `.codex/skills/`, and `.agents/.skill-lock.json` are included for rollback, while credentials, session databases, caches, worktrees, and runtime binaries are outside the backup scope.
 
 Done means the command succeeds and the backup ID is recorded.
