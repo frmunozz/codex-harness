@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worker Delegation"
+  short_description: "Delegate bounded execution work to worker subagents"
+  default_prompt: "Use this skill only when the user explicitly requests worker subagents or a specific task split. Split bounded execution or validation work into disjoint scopes, use fork_context=false on every spawn, wait for required results before blocking work, and keep open-ended exploration under explore-delegation."

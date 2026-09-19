@@ -1,0 +1,4 @@
+interface:
+  display_name: "Recent Work Summary"
+  short_description: "Summarize recent work from git and GitHub"
+  default_prompt: "Use $recent-work-summary to summarize my last 7 days of commits, PRs, and issues in English and Spanish."

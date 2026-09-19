@@ -1,0 +1,14 @@
+# Local rollback material. Never publish user backups.
+backup/
+
+# Local Codex/runtime state if someone tests from this repo.
+.codex/
+.codex-log/
+__pycache__/
+*.py[cod]
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

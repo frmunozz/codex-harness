@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Orchestration"
+  short_description: "Orchestrate substantial implementation work across specialized subagents"
+  default_prompt: "Use this skill for explicit multi-agent implementation orchestration. Keep the root conversation as the orchestrator, route investigation to explorer, bounded implementation to worker, reasoning-heavy implementation to deep-worker, independent review to reviewer, completion gates to validator, and use default only as an exceptional fallback. Prefer isolated task packets, shallow delegation, dependency-aware parallelism, root triage of findings, and root-owned final integration and acceptance."

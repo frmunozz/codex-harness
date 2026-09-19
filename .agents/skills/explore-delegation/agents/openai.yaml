@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explore Delegation"
+  short_description: "Delegate open-ended exploration to explorer subagents"
+  default_prompt: "Use this skill for open-ended exploration. Spawn explorer subagents for clear research goals, use fork_context=false on every spawn, and wait for required results before continuing blocking work."

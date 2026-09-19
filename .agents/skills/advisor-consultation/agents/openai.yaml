@@ -1,0 +1,7 @@
+interface:
+  display_name: "Advisor Consultation"
+  short_description: "Escalate consequential unresolved engineering judgment"
+  default_prompt: "Establish the relevant facts first, verify both advisor gates, build one minimal decision packet, consult the advisor, and return the recommendation to the root for the final decision."
+
+policy:
+  allow_implicit_invocation: true

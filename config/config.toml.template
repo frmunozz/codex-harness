@@ -1,0 +1,47 @@
+# Portable Codex template.
+# Copy or merge into ~/.codex/config.toml.
+# Keep machine-specific paths, MCP commands, project trust entries, and runtime values local.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+personality = "pragmatic"
+web_search = "live"
+project_doc_max_bytes = 65536
+
+[agents]
+max_depth = 1
+max_threads = 6
+
+[features]
+apps = true
+goals = true
+hooks = true
+multi_agent = true
+undo = true
+workspace_dependencies = true
+
+[desktop]
+integratedTerminalShell = "powershell"
+followUpQueueMode = "queue"
+show-context-window-usage = true
+
+[memories]
+generate_memories = false
+use_memories = false
+
+# Optional model pin. Leave unset to use the target installation's default.
+# model = "gpt-5.6-luna"
+# model_reasoning_effort = "xhigh"
+
+# Skills disabled in the source profile. Remove entries to enable them.
+[[skills.config]]
+enabled = false
+name = "build-web-apps:supabase-postgres-best-practices"
+
+[[skills.config]]
+enabled = false
+name = "build-web-apps:stripe-best-practices"
+
+[[skills.config]]
+enabled = false
+name = "build-web-apps:shadcn"

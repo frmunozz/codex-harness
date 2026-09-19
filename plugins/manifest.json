@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "enabled_in_source_profile": [
+    "browser@openai-bundled",
+    "build-web-apps@openai-curated",
+    "caveman@caveman-repo",
+    "chrome@openai-bundled",
+    "codex-app-tools@openai-bundled",
+    "computer-use@openai-bundled",
+    "documents@openai-primary-runtime",
+    "github@openai-curated",
+    "google-drive@openai-curated",
+    "pdf@openai-primary-runtime",
+    "ponytail@ponytail",
+    "presentations@openai-primary-runtime",
+    "sites@openai-bundled",
+    "spreadsheets@openai-primary-runtime",
+    "template-creator@openai-primary-runtime",
+    "unified-computer-use@openai-bundled",
+    "visualize@openai-bundled"
+  ],
+  "offline_snapshot": "plugins/ponytail/4.10.0",
+  "install_policy": "Reinstall managed plugins through the current Codex/plugin mechanism. Do not copy .codex/plugins/cache between machines.",
+  "notes": [
+    "caveman@caveman-repo needs source resolution if unavailable on the target machine.",
+    "The Ponytail snapshot retains its upstream metadata and license files."
+  ]
+}
