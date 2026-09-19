@@ -11,9 +11,9 @@ rollback, and sync skills perform approved changes.
 - `config/config.toml.template`: portable configuration baseline.
 - `plugins/manifest.json`: desired plugin inventory, not a version lock or
   plugin-cache mirror.
-- `metadata/matt-pocock-skills.json`: pinned external Matt Pocock skill source,
-  tag, and selected names.
-- `skills/`: repository skill source installed through `npx skills add`.
+- `skills/remote-skills.json`: remote skill sources, refs, and selected names.
+- `skills/`: repository skill source installed through the commit-pinned remote
+  entry in `skills/remote-skills.json`.
 - `.agents/skills/`: repository-only maintenance skills. They are not part of
   the repository skill source or the harness file-copy target.
 
@@ -56,16 +56,18 @@ approval. Do not vendor or copy the plugin cache.
 Ponytail skills work without Node.js. Its lifecycle hooks require Node.js and
 separate human review/trust.
 
-### Keep Matt Pocock skills coherent
+### Keep remote skills coherent
 
-Matt Pocock skills are external skills, not a harness plugin-cache mirror. Use
-`metadata/matt-pocock-skills.json` as the expected inventory and pinned ref.
-The audit expected set is the union of that manifest and the names discovered
-by `npx skills add ./skills --list`. Missing or wrong-source expected skills
-are actionable; extra developer skills are valid. The install skill backs up,
-shows, and removes approved collisions, then installs the pinned Matt URL and
-the local repository source. Do not expect Matt skill source folders inside
-this repository.
+Remote skills are external skills, not a harness plugin-cache mirror. Use
+`skills/remote-skills.json` as the expected inventory and configured ref. The
+audit expected set is the union of that manifest and the names discovered by
+`npx skills add <source-or-source/tree/ref> --list`. Missing or wrong-source
+expected skills are actionable; extra developer skills are valid. The install
+skill backs up, shows, and removes approved collisions, then installs each
+configured remote source. Do not expect remote skill source folders inside
+this repository. A `latest` ref is a moving target and requires explicit human
+approval. Use `/codex-harness-remote-update` to choose and apply newer tags or
+commits to the local setup, the manifest, or both.
 
 ## Remove or avoid
 

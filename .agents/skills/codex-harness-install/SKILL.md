@@ -26,9 +26,10 @@ Directory backups include the full directory tree. If a directory did not exist,
 4. Run `$PYTHON scripts/codex_harness.py install --yes`; record the installer-created backup ID too. The command backs up again, removes/replaces only the harness paths, and leaves skill contents to the explicit `npx skills` flow below.
 5. Run `$PYTHON scripts/codex_harness.py status` and report both backup IDs, the installed-file count, and replaced/removed path count.
 6. Reconcile skills as one explicit, backed-up transaction:
-   - Read `metadata/matt-pocock-skills.json` for the pinned `source`, `ref`, and Matt names.
-   - Run `npx skills add ./skills --list` and record the repository names discovered under the grouped `skills/` tree.
-   - Run `npx skills list --global --json`. The collision set is every installed global skill whose name is in either expected set. Show each collision's name, path, agents, and recorded source. Extras are allowed and stay untouched.
+   - Read `skills/remote-skills.json` as a JSON list. Each entry must contain one remote `source`, one `ref`, and its selected `skills`; `ref: "latest"` is allowed only when the sync skill recorded explicit human approval for a moving install.
+   - Treat the harness repository's own entry as a remote source too. It must use the repository's published `origin` URL and a commit ref; never install the harness skill set from `./skills`.
+   - For each manifest entry, run `npx skills add <source-or-source/tree/ref> --list` and compare the discovered names with that entry's selected names. Report missing, renamed, or unexpected names before changing local skills.
+   - Run `npx skills list --global --json`. The collision set is every installed global skill whose name is in either the repository set or the union of names in `skills/remote-skills.json`. Show each collision's name, path, agents, and recorded source. Extras are allowed and stay untouched.
    - Confirm the listed global paths are covered by the roots recorded by
      `status`. The harness `AGENTS_HOME` override is not an `npx skills`
      setting; if the CLI reports another global store, stop before removal and
@@ -39,23 +40,17 @@ Directory backups include the full directory tree. If a directory did not exist,
      npx --yes skills remove <collision-name> ... --global --agent '*' --yes
      ```
 
-   - Install the pinned Matt set, one `--skill <name>` per manifest entry:
+   - Install each remote manifest entry, one `--skill <name>` per entry. For a concrete ref, use the source repository's `/tree/<ref>` URL; for an approved `latest` ref, use the source URL without a ref:
 
      ```text
-     npx --yes skills add https://github.com/mattpocock/skills/tree/<ref> --global --agent '*' --skill <name> ... --yes
+     npx --yes skills add <source-or-source/tree/ref> --global --agent '*' --skill <name> ... --yes
      ```
 
-   - Install this repository's set:
-
-     ```text
-     npx --yes skills add ./skills --global --all
-     ```
-
-   - `--global` uses the CLI's user-level canonical store. `--all` targets all
-     supported/default agents. Omit `--copy` so the CLI keeps its default
-     symlink method. The CLI may update `.agents/.skill-lock.json` for remote
-     installs; local-path installs may not create global lock entries. Do not
-     edit the lock manually or copy skill directories into agent paths.
+   - `--global` uses the CLI's user-level canonical store. `--agent '*'`
+     targets all supported/default agents. Omit `--copy` so the CLI keeps its
+     default symlink method. Remote installs update `.agents/.skill-lock.json`
+     with source/ref/hash evidence. Do not edit the lock manually or copy skill
+     directories into agent paths.
    - If `npx`/Node.js is unavailable, report the exact commands and defer this
      step. Do not remove anything when the collision inventory cannot be read.
 7. Merge `.codex/config.toml` with a separate human approval through the agent:
@@ -87,4 +82,4 @@ Directory backups include the full directory tree. If a directory did not exist,
    - After any approved installation, enablement, or hook trust action, recheck `/plugins`, then restart Codex/start a new thread when required. For Ponytail, open `/hooks` and have the human review and trust its two lifecycle hooks.
    - If CLI plugin commands are unavailable, give the human the equivalent Codex UI path: `/plugins` → select the relevant marketplace → install or enable the plugin. For Ponytail, add `https://github.com/DietrichGebert/ponytail` first, then review `/hooks`.
    - Report installed/enabled, installed/disabled, missing, and deferred entries. Do not modify `plugins/manifest.json` during install unless the human explicitly asks for a profile change.
-Done means the harness install completed, status succeeds, backup IDs are reported, the expected skill inventory was assessed, collisions were approved and removed before both intended sources were installed (or the skill step is clearly deferred), config merge is approved and valid or explicitly deferred, and every desired plugin is classified with approved changes completed or clearly deferred.
+Done means the harness install completed, status succeeds, backup IDs are reported, every `skills/remote-skills.json` entry—including the harness repository's commit-pinned entry—was assessed and installed remotely or clearly deferred, collisions were approved and removed before intended sources were installed, config merge is approved and valid or explicitly deferred, and every desired plugin is classified with approved changes completed or clearly deferred.

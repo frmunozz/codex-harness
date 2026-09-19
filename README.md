@@ -4,14 +4,14 @@ Portable, experimental Codex user configuration for Windows, macOS, and Linux.
 
 Contents:
 
-- `skills/` — repository skill source installed through `npx skills add ./skills`.
+- `skills/` — repository skill source installed through the commit-pinned entry in `skills/remote-skills.json`.
 - `.agents/skills/` — repository-only maintenance skills; never installed globally.
 - `agents/` — reusable subagent presets.
 - `instructions/` — global `AGENTS.md` guidance.
 - `hooks/` — cross-platform hook scripts and activation templates.
 - `config/config.toml.template` — safe portable configuration baseline for the install skill.
 - `plugins/manifest.json` — desired plugin inventory and source notes; install/sync skills reconcile it with live plugin state.
-- `metadata/matt-pocock-skills.json` — pinned Matt Pocock skill source, tag, and selected skill names.
+- `skills/remote-skills.json` — remote skill sources, refs, and selected skill names for reproducible install.
 - `docs/recommendations.md` — recommendation policy used by the audit skill.
 - `scripts/` — backup, install, status, sync, and rollback tooling.
 
@@ -41,7 +41,7 @@ Use `python3` where that is the local command.
 
 The installer backs up existing scoped files and directory trees first. It also backs up `config.toml`, both skill trees, and `.agents/.skill-lock.json` for rollback, but never edits `config.toml`; the install skill reviews and merges the config baseline through the agent after human approval. Backups go to `backup/<timestamp>/`; `.gitignore` prevents them from entering Git.
 
-The installer copies harness files only. The install skill separately assesses the expected skill names, removes approved collisions through `npx skills`, then installs the pinned Matt Pocock set and this repository's skills with global symlinks.
+The installer copies harness files only. The install skill separately assesses the expected skill names, removes approved collisions through `npx skills`, then installs the remote entries from `skills/remote-skills.json` and this repository's skills with global symlinks.
 
 ## Optional OpenCodex integration
 
@@ -106,15 +106,19 @@ The installer replaces `~/.codex/AGENTS.md`, `~/.codex/agents/`, and `~/.codex/h
 
 ## Skills
 
-From the repository root, use the install skill to assess the expected skill set, remove approved collisions, and install repository skills plus the pinned Matt Pocock skills.
+From the repository root, use the install skill to assess the expected skill set, remove approved collisions, and install repository skills plus the remote skills declared in `skills/remote-skills.json`.
 
 Repository skills:
 
 ```text
-npx --yes skills add ./skills --global --all
+npx --yes skills add <harness-source/tree/commit> --global --agent '*' --skill <name> ... --yes
 ```
 
-Matt Pocock skills: read [`metadata/matt-pocock-skills.json`](metadata/matt-pocock-skills.json) for the pinned tag and selected names, then install with repeated `--skill` options from that tag. Use `--global --agent '*'`, omit `--copy` for symlinks, and remove only approved collisions with expected names; unrelated extra skills remain.
+The harness source and commit are the first entry in
+[`skills/remote-skills.json`](skills/remote-skills.json); use the install skill
+to expand the selected names. Do not install repository skills from `./skills`.
+
+Remote skills: read [`skills/remote-skills.json`](skills/remote-skills.json). Each list entry groups one source and ref with selected names, including this harness repository at a published commit. Use the source repository's `/tree/<ref>` URL for a concrete ref, or the source URL for an explicitly human-approved `latest` entry. Install with repeated `--skill` options, `--global --agent '*'`, and no `--copy`; remove only approved collisions with expected names. Unrelated extra skills remain.
 
 ## Security
 
@@ -131,11 +135,13 @@ Plugins are listed in `plugins/manifest.json`. The harness does not vendor or in
 
 1. Run `python scripts/codex_harness.py sync --dry-run`.
 2. Let the sync skill compare local `config.toml` with the template and show a redacted proposal for portable candidates.
-3. Approve or reject candidates explicitly; apply only approved template edits. Never sync a user's local `config.toml` wholesale.
-4. Run `python scripts/codex_harness.py sync --yes` after reviewing the managed-file diff.
-5. Review the sync skill's proposed `plugins/manifest.json` update against live Codex plugin state.
-6. Run `python scripts/codex_harness.py status`.
-7. Commit only intended source changes.
+3. Let the sync skill inventory `$AGENTS_HOME/skills/`, `$CODEX_HOME/skills/`, and `.agents/.skill-lock.json` against repository and remote skill inventories.
+4. Approve or reject config and remote-version candidates explicitly; copy new custom/OpenAI skills into the repository tree as directed. Never sync a user's local `config.toml` wholesale or vendor remote skill content.
+5. Run `python scripts/codex_harness.py sync --yes` after reviewing the managed-file diff.
+6. Run `/codex-harness-remote-update` when choosing newer commits/tags for tracked packs.
+7. Review the sync skill's proposed `plugins/manifest.json` update against live Codex plugin state.
+8. Run `python scripts/codex_harness.py status`.
+9. Commit only intended source changes.
 
 Run `/codex-harness-audit` after updating or installing the harness.
 

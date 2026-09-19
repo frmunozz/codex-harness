@@ -24,6 +24,12 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-19:** Added commit-pinned remote tracking for the harness skill
+  source and a human-approved updater skill for selecting newer commits or
+  tags on the repository, local setup, or both.
+- **2026-09-19:** Standardized remote skill provisioning in
+  `skills/remote-skills.json` and extended sync guidance to discover local
+  skills, lock-file provenance, concrete refs, and approved latest installs.
 - **2026-09-19:** Extended sync guidance to compare the developer's local
   `config.toml` with the portable template, propose safe candidates, and require
   explicit human approval before adding selected settings.

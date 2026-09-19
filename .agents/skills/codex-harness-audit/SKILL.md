@@ -21,7 +21,7 @@ Read these sources before assessing state:
 - `README.md`
 - `docs/recommendations.md`
 - `plugins/manifest.json`
-- `metadata/matt-pocock-skills.json`
+- `skills/remote-skills.json`
 - `config/config.toml.template`
 - `scripts/codex_harness.py`
 
@@ -113,29 +113,38 @@ For Ponytail, report Node.js availability separately because skills work
 without it while lifecycle hooks do not. Recommend the existing approval-gated
 install/enable path; do not run it from this audit.
 
-Read `metadata/matt-pocock-skills.json`. Run `npx skills add ./skills --list`
-to discover the repository skill names, then run `npx skills list --global
---json`. The expected set is the union of the repository names and the Matt
+Read `skills/remote-skills.json`. Enumerate repository names from
+`skills/**/SKILL.md`, then run `npx skills add <source-or-source/tree/ref>
+--list` for each remote manifest entry and run `npx skills list --global
+--json`. The expected set is the union of the repository names and the remote
 manifest names. This is a minimum: extra developer skills are valid and must
-not be treated as drift.
+not be treated as drift. The harness repository entry must use its published
+remote URL and a commit ref; a local-path install is drift.
+
+Using the roots reported by `status`, enumerate `$AGENTS_HOME/skills/` and
+`$CODEX_HOME/skills/`, and read `$AGENTS_HOME/.skill-lock.json` when present.
+Use lock entries to identify `npx skills` provenance and report stale lock
+entries, missing local folders, and local skills absent from the repository or
+remote manifest. Do not copy or edit the lock during an audit.
 
 For every expected name, classify it as:
 
 - present with the expected source and available to Codex;
 - present but sourced from the wrong place, linked to the wrong path, or with
   content that differs from the repository copy;
-- present as a Matt skill but the CLI cannot attest the pinned tag; or
+- present as a remote skill but the CLI cannot attest the configured ref; or
 - missing locally.
 
 For repository skills, compare the installed `SKILL.md` content with the
 matching file discovered under this repository's `skills/` tree when the
 source field is null, because local-path installs are recorded without a
-remote source. For Matt skills, require `source`/`sourceUrl` to identify
-`mattpocock/skills`. Compare the configured tag with the lock entry's `ref`
-when that field exists; the list JSON does not expose the ref, and older lock
-entries may omit it. In that case report the configured tag as unverifiable
-rather than claiming version alignment. A tag check requires an explicit
-reinstall from the pinned URL or another recorded content hash.
+remote source. For remote skills, require `source`/`sourceUrl` to identify the
+configured repository. Compare the configured `ref` with lock/source evidence
+when available; the list JSON and older lock entries may omit the ref. Report
+`ref: "latest"` as an explicitly approved moving target, not as a pinned
+version. Otherwise report the configured ref as unverifiable rather than
+claiming alignment. A ref check requires an explicit reinstall from the
+configured URL or another recorded content hash.
 
 Use the paths returned by `npx skills list` as the live evidence. Do not assume
 the harness `AGENTS_HOME` override changes the CLI's own global home; report a

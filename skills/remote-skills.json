@@ -1,0 +1,52 @@
+[
+  {
+    "source": "https://github.com/frmunozz/codex-harness",
+    "ref": "75d82764c4f144d6d1945363b1ccf95b829941f0",
+    "skills": [
+      "worker-delegation",
+      "advisor-orchestrator",
+      "advisor-consultation",
+      "recent-work-summary",
+      "explore-delegation",
+      "agentic-orchestration",
+      "gh-address-comments",
+      "gh-fix-ci",
+      "jupyter-notebook",
+      "pdf",
+      "imagegen",
+      "screenshot",
+      "playwright"
+    ]
+  },
+  {
+    "source": "https://github.com/mattpocock/skills",
+    "ref": "v1.2.3",
+    "skills": [
+      "code-review",
+      "codebase-design",
+      "diagnosing-bugs",
+      "domain-modeling",
+      "grill-me",
+      "grill-with-docs",
+      "grilling",
+      "handoff",
+      "implement",
+      "improve-codebase-architecture",
+      "prototype",
+      "research",
+      "resolving-merge-conflicts",
+      "setup-matt-pocock-skills",
+      "setup-pre-commit",
+      "tdd",
+      "teach",
+      "to-questionnaire",
+      "to-spec",
+      "to-tickets",
+      "triage",
+      "wait-what",
+      "wayfinder",
+      "wizard",
+      "writing-for-agents"
+    ]
+  }
+]
