@@ -1,0 +1,48 @@
+skills/codex-harness-backup/SKILL.md
+  s_9efbef44d84199::t_9f2b8aba6c987a 1-15
+AGENTS.md
+  s_9efbef44d84199::t_9f2b8aba6c987a 15-16
+  s_9efbef44d84199::t_a3c8f32096b12d 19
+skills/codex-harness-install/SKILL.md
+  s_9efbef44d84199::t_b43bdd04e2a15a 12-13,15
+  s_9efbef44d84199::t_9f2b8aba6c987a 1-11,16-17
+  s_9efbef44d84199::t_bb0635d283af1b 14
+skills/codex-harness-rollback/SKILL.md
+  s_9efbef44d84199::t_9f2b8aba6c987a 1-18
+skills/codex-harness-sync/SKILL.md
+  s_9efbef44d84199::t_9f2b8aba6c987a 1-17
+instructions/AGENTS.md
+  s_9efbef44d84199::t_4726f92ef2fed5 21
+  s_9efbef44d84199::t_9f2b8aba6c987a 18-20,22-25
+scripts/codex_harness.py
+  s_9efbef44d84199::t_dd502a4e1fe066 202-204,209-211,216-219,334-342,347-352
+  s_9efbef44d84199::t_8fc16ef9f139a2 292-295
+  s_9efbef44d84199::t_8967d2e610fb93 27-55,88-93,134,170-176,184-201,212-215,303,306,328-333,353-361,380-384
+  s_9efbef44d84199::t_234b89089a8a38 177-183
+  s_9efbef44d84199::t_9188265fb57bea 205-208,343-346
+  s_9efbef44d84199::t_159c39e2fa8bff 2
+  s_9efbef44d84199::t_f2562230ff4ab4 220-222
+hooks/README.md
+  s_9efbef44d84199::t_8967d2e610fb93 8
+README.md
+  s_9efbef44d84199::t_a3c8f32096b12d 53-54
+  s_9efbef44d84199::t_8967d2e610fb93 7,9,14,48,107-109,112
+metadata/skill-lock.json
+  s_9efbef44d84199::t_9f2b8aba6c987a 311
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4af0b4aed65c75f91f157992aef93f0d6cf951ac",
+  "prompts": {},
+  "sessions": {
+    "s_9efbef44d84199": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b760-bcfa-78d2-ad52-a1f1f0428d50",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
