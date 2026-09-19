@@ -1,0 +1,675 @@
+.gitattributes
+  s_396a970014d7ec::t_8978d58d4aa78b 1-7
+.agents/skills/advisor-consultation/SKILL.md
+  s_396a970014d7ec::t_2159c23587329e 1-165
+.agents/skills/advisor-consultation/agents/openai.yaml
+  s_396a970014d7ec::t_ba2a533c3eda3e 1-7
+.agents/skills/advisor-orchestrator/SKILL.md
+  s_396a970014d7ec::t_e27bd1bb5c2e7d 1-83
+.agents/skills/advisor-orchestrator/agents/openai.yaml
+  s_396a970014d7ec::t_146ea2597359e0 1-7
+.agents/skills/agentic-orchestration/SKILL.md
+  s_396a970014d7ec::t_692b6c32482062 1-249
+.agents/skills/agentic-orchestration/agents/openai.yaml
+  s_396a970014d7ec::t_d8bd69d79ebbbd 1-4
+.agents/skills/caveman/SKILL.md
+  s_396a970014d7ec::t_2fcf2ce18d7a26 1-49
+.agents/skills/code-review/SKILL.md
+  s_396a970014d7ec::t_dd902c59778bc0 1-89
+.agents/skills/code-review/agents/openai.yaml
+  s_396a970014d7ec::t_966130811e3d94 1-3
+.agents/skills/codebase-design/DEEPENING.md
+  s_396a970014d7ec::t_5dc66fff30b000 1-37
+.agents/skills/codebase-design/DESIGN-IT-TWICE.md
+  s_396a970014d7ec::t_e8cf23a4eb3ab2 1-44
+.agents/skills/codebase-design/SKILL.md
+  s_396a970014d7ec::t_6e62ad795637bb 1-114
+.agents/skills/codebase-design/agents/openai.yaml
+  s_396a970014d7ec::t_526c50a48d1e06 1-3
+.agents/skills/diagnosing-bugs/SKILL.md
+  s_396a970014d7ec::t_2b20ed32d2f4fe 1-138
+.agents/skills/diagnosing-bugs/agents/openai.yaml
+  s_396a970014d7ec::t_519052c9bcc612 1-3
+.agents/skills/diagnosing-bugs/scripts/hitl-loop.template.sh
+  s_396a970014d7ec::t_a15cbb87e0d3e6 1-44
+.agents/skills/domain-modeling/ADR-FORMAT.md
+  s_396a970014d7ec::t_0f34c70ef83ed1 1-47
+.agents/skills/domain-modeling/CONTEXT-FORMAT.md
+  s_396a970014d7ec::t_c2f343851ea06b 1-60
+.agents/skills/domain-modeling/SKILL.md
+  s_396a970014d7ec::t_073f56ad8d02bb 1-74
+.agents/skills/domain-modeling/agents/openai.yaml
+  s_396a970014d7ec::t_4fb915298fa29d 1-3
+.agents/skills/explore-delegation/SKILL.md
+  s_396a970014d7ec::t_0afc02fd630cc6 1-58
+.agents/skills/explore-delegation/agents/openai.yaml
+  s_396a970014d7ec::t_2a8dfb7dfe7695 1-4
+.agents/skills/gh-address-comments/LICENSE.txt
+  s_396a970014d7ec::t_5a5351d3cc43ae 1-202
+.agents/skills/gh-address-comments/SKILL.md
+  s_396a970014d7ec::t_680f5994336b34 1-25
+.agents/skills/gh-address-comments/agents/openai.yaml
+  s_396a970014d7ec::t_15c353e23763ac 1-6
+.agents/skills/gh-address-comments/assets/github-small.svg
+  s_396a970014d7ec::t_a91db6afa060d2 1-3
+.agents/skills/gh-address-comments/scripts/fetch_comments.py
+  s_396a970014d7ec::t_856f28748c02d8 1-237
+.agents/skills/gh-fix-ci/LICENSE.txt
+  s_396a970014d7ec::t_7b38b9ba4d4882 1-201
+.agents/skills/gh-fix-ci/SKILL.md
+  s_396a970014d7ec::t_5658edf17df246 1-69
+.agents/skills/gh-fix-ci/agents/openai.yaml
+  s_396a970014d7ec::t_e61c5d488e4be7 1-6
+.agents/skills/gh-fix-ci/assets/github-small.svg
+  s_396a970014d7ec::t_300e2590e6ca59 1-3
+.agents/skills/gh-fix-ci/scripts/inspect_pr_checks.py
+  s_396a970014d7ec::t_172173baa504fc 1-509
+.agents/skills/grill-me/SKILL.md
+  s_396a970014d7ec::t_0d88cb7a070ed2 1-7
+.agents/skills/grill-me/agents/openai.yaml
+  s_396a970014d7ec::t_47570558dc6796 1-5
+.agents/skills/grill-with-docs/SKILL.md
+  s_396a970014d7ec::t_35fd4b2a68547a 1-7
+.agents/skills/grill-with-docs/agents/openai.yaml
+  s_396a970014d7ec::t_1e637a3d074608 1-5
+.agents/skills/grilling/SKILL.md
+  s_396a970014d7ec::t_05448906031001 1-28
+.agents/skills/grilling/agents/openai.yaml
+  s_396a970014d7ec::t_a2607e5e41418f 1-3
+.agents/skills/handoff/SKILL.md
+  s_396a970014d7ec::t_9d210be0fcbdd3 1-16
+.agents/skills/handoff/agents/openai.yaml
+  s_396a970014d7ec::t_616ea46e7b4545 1-5
+.agents/skills/imagegen/LICENSE.txt
+  s_396a970014d7ec::t_d974931986c23d 1-201
+.agents/skills/imagegen/SKILL.md
+  s_396a970014d7ec::t_782ca3b3eea406 1-174
+.agents/skills/imagegen/agents/openai.yaml
+  s_396a970014d7ec::t_47f59127eb2ef3 1-6
+.agents/skills/imagegen/assets/imagegen-small.svg
+  s_396a970014d7ec::t_17efdabfc39e34 1-5
+.agents/skills/imagegen/references/cli.md
+  s_396a970014d7ec::t_dac2fca08c7d23 1-132
+.agents/skills/imagegen/references/codex-network.md
+  s_396a970014d7ec::t_b019b93f5d190d 1-28
+.agents/skills/imagegen/references/image-api.md
+  s_396a970014d7ec::t_48b67a84315d72 1-36
+.agents/skills/imagegen/references/prompting.md
+  s_396a970014d7ec::t_40bf88b567d68a 1-81
+.agents/skills/imagegen/references/sample-prompts.md
+  s_396a970014d7ec::t_09e0a9909b99c5 1-384
+.agents/skills/imagegen/scripts/image_gen.py
+  s_396a970014d7ec::t_1225a1363a0b51 1-876
+.agents/skills/implement/SKILL.md
+  s_396a970014d7ec::t_d89b021de3a38e 1-15
+.agents/skills/implement/agents/openai.yaml
+  s_396a970014d7ec::t_970d1f7ed686c4 1-5
+.agents/skills/improve-codebase-architecture/HTML-REPORT.md
+  s_396a970014d7ec::t_c05de40a4cb3b3 1-123
+.agents/skills/improve-codebase-architecture/SKILL.md
+  s_396a970014d7ec::t_dc9d684097a4ce 1-71
+.agents/skills/improve-codebase-architecture/agents/openai.yaml
+  s_396a970014d7ec::t_477093a9437219 1-5
+.agents/skills/jupyter-notebook/LICENSE.txt
+  s_396a970014d7ec::t_3354828d584f98 1-201
+.agents/skills/jupyter-notebook/SKILL.md
+  s_396a970014d7ec::t_27a05afa9d04e0 1-107
+.agents/skills/jupyter-notebook/agents/openai.yaml
+  s_396a970014d7ec::t_b16901c02855ab 1-6
+.agents/skills/jupyter-notebook/assets/experiment-template.ipynb
+  s_396a970014d7ec::t_08a16e0b28e07e 1-110
+.agents/skills/jupyter-notebook/assets/jupyter-small.svg
+  s_396a970014d7ec::t_def937ad507eb0 1-3
+.agents/skills/jupyter-notebook/assets/tutorial-template.ipynb
+  s_396a970014d7ec::t_161040a665850a 1-107
+.agents/skills/jupyter-notebook/references/experiment-patterns.md
+  s_396a970014d7ec::t_457aad340c9fc7 1-10
+.agents/skills/jupyter-notebook/references/notebook-structure.md
+  s_396a970014d7ec::t_13d7601929ae11 1-17
+.agents/skills/jupyter-notebook/references/quality-checklist.md
+  s_396a970014d7ec::t_8e04466ad7955a 1-11
+.agents/skills/jupyter-notebook/references/tutorial-patterns.md
+  s_396a970014d7ec::t_6ef7f2b72fc7c9 1-9
+.agents/skills/jupyter-notebook/scripts/new_notebook.py
+  s_396a970014d7ec::t_27592a1bcc4897 1-130
+.agents/skills/pdf/LICENSE.txt
+  s_396a970014d7ec::t_7b2bcc419f7720 1-201
+.agents/skills/pdf/SKILL.md
+  s_396a970014d7ec::t_26475e16b29f9d 1-67
+.agents/skills/pdf/agents/openai.yaml
+  s_396a970014d7ec::t_7dcdc4de9fcf22 1-5
+.agents/skills/playwright/LICENSE.txt
+  s_396a970014d7ec::t_c87dc986875bf3 1-201
+.agents/skills/playwright/NOTICE.txt
+  s_396a970014d7ec::t_e72b33c29d2987 1-14
+.agents/skills/playwright/SKILL.md
+  s_396a970014d7ec::t_fb049c183ac6e6 1-147
+.agents/skills/playwright/agents/openai.yaml
+  s_396a970014d7ec::t_6b320666a10ad7 1-6
+.agents/skills/playwright/assets/playwright-small.svg
+  s_396a970014d7ec::t_3f22360010e3ea 1-3
+.agents/skills/playwright/references/cli.md
+  s_396a970014d7ec::t_fbbf8ea9cecc31 1-116
+.agents/skills/playwright/references/workflows.md
+  s_396a970014d7ec::t_bdd70ac07c03be 1-95
+.agents/skills/playwright/scripts/playwright_cli.sh
+  s_396a970014d7ec::t_955eb756d4aa5d 1-25
+.agents/skills/prototype/LOGIC.md
+  s_396a970014d7ec::t_6b8efb6d2e9c13 1-67
+.agents/skills/prototype/SKILL.md
+  s_396a970014d7ec::t_f1b3dad22efbb6 1-26
+.agents/skills/prototype/UI.md
+  s_396a970014d7ec::t_46c63433d60b39 1-112
+.agents/skills/prototype/agents/openai.yaml
+  s_396a970014d7ec::t_c4932a30cd0681 1-3
+.agents/skills/recent-work-summary/SKILL.md
+  s_396a970014d7ec::t_6ff89a63dc28a3 1-92
+.agents/skills/recent-work-summary/agents/openai.yaml
+  s_396a970014d7ec::t_7a58c2d53bf07a 1-4
+.agents/skills/recent-work-summary/references/output-format.md
+  s_396a970014d7ec::t_1deb99d558d1cf 1-63
+.agents/skills/recent-work-summary/scripts/collect_recent_work.py
+  s_396a970014d7ec::t_da273815bf69e5 1-1048
+.agents/skills/recent-work-summary/scripts/test_collect_recent_work.py
+  s_396a970014d7ec::t_a758018e4cbe54 1-65
+.agents/skills/research/SKILL.md
+  s_396a970014d7ec::t_e1cca2c79acbb2 1-12
+.agents/skills/research/agents/openai.yaml
+  s_396a970014d7ec::t_7d1e7db485eff1 1-3
+.agents/skills/resolving-merge-conflicts/SKILL.md
+  s_396a970014d7ec::t_0e7d189714876d 1-14
+.agents/skills/resolving-merge-conflicts/agents/openai.yaml
+  s_396a970014d7ec::t_dbf7e1b5b19180 1-3
+.agents/skills/screenshot/LICENSE.txt
+  s_396a970014d7ec::t_c40dbc31b60415 1-201
+.agents/skills/screenshot/SKILL.md
+  s_396a970014d7ec::t_723dc20af9b0fe 1-267
+.agents/skills/screenshot/agents/openai.yaml
+  s_396a970014d7ec::t_86c8650da35812 1-6
+.agents/skills/screenshot/assets/screenshot-small.svg
+  s_396a970014d7ec::t_1e9ab9e7b7a789 1-5
+.agents/skills/screenshot/scripts/ensure_macos_permissions.sh
+  s_396a970014d7ec::t_bb602d1ae25181 1-54
+.agents/skills/screenshot/scripts/macos_display_info.swift
+  s_396a970014d7ec::t_12517fffe6d164 1-22
+.agents/skills/screenshot/scripts/macos_permissions.swift
+  s_396a970014d7ec::t_9c7010ca0a9f0f 1-40
+.agents/skills/screenshot/scripts/macos_window_info.swift
+  s_396a970014d7ec::t_4d8ebe60a778df 1-126
+.agents/skills/screenshot/scripts/take_screenshot.ps1
+  s_396a970014d7ec::t_2912de0ef311a7 1-163
+.agents/skills/screenshot/scripts/take_screenshot.py
+  s_396a970014d7ec::t_7676d71d2b7b37 1-585
+.agents/skills/setup-matt-pocock-skills/SKILL.md
+  s_396a970014d7ec::t_9167ec9c3adc84 1-116
+.agents/skills/setup-matt-pocock-skills/agents/openai.yaml
+  s_396a970014d7ec::t_2dc36b42dd8694 1-5
+.agents/skills/setup-matt-pocock-skills/domain.md
+  s_396a970014d7ec::t_444021d87276c8 1-51
+.agents/skills/setup-matt-pocock-skills/issue-tracker-github.md
+  s_396a970014d7ec::t_19203c399cb9a0 1-45
+.agents/skills/setup-matt-pocock-skills/issue-tracker-gitlab.md
+  s_396a970014d7ec::t_92bebecc614dfd 1-46
+.agents/skills/setup-matt-pocock-skills/issue-tracker-local.md
+  s_396a970014d7ec::t_26d74b0f165f80 1-30
+.agents/skills/setup-matt-pocock-skills/triage-labels.md
+  s_396a970014d7ec::t_1e6e74026a1522 1-15
+.agents/skills/setup-pre-commit/SKILL.md
+  s_396a970014d7ec::t_a1aecac629c894 1-91
+.agents/skills/setup-pre-commit/agents/openai.yaml
+  s_396a970014d7ec::t_7109f789c4024a 1-3
+.agents/skills/tdd/SKILL.md
+  s_396a970014d7ec::t_515cc635ad7570 1-38
+.agents/skills/tdd/agents/openai.yaml
+  s_396a970014d7ec::t_bf74cfdf5b8379 1-3
+.agents/skills/tdd/mocking.md
+  s_396a970014d7ec::t_3722a77f9ecef3 1-59
+.agents/skills/tdd/tests.md
+  s_396a970014d7ec::t_609c08588d9261 1-77
+.agents/skills/teach/GLOSSARY-FORMAT.md
+  s_396a970014d7ec::t_2c2d7e728baaf0 1-35
+.agents/skills/teach/LEARNING-RECORD-FORMAT.md
+  s_396a970014d7ec::t_d88e6f5fc96228 1-46
+.agents/skills/teach/MISSION-FORMAT.md
+  s_396a970014d7ec::t_0db36595399626 1-31
+.agents/skills/teach/RESOURCES-FORMAT.md
+  s_396a970014d7ec::t_dda9359d90dae3 1-32
+.agents/skills/teach/SKILL.md
+  s_396a970014d7ec::t_f67dcd1644f974 1-140
+.agents/skills/teach/agents/openai.yaml
+  s_396a970014d7ec::t_8707a188870bea 1-5
+.agents/skills/to-questionnaire/SKILL.md
+  s_396a970014d7ec::t_ea7ed10cddda35 1-54
+.agents/skills/to-questionnaire/agents/openai.yaml
+  s_396a970014d7ec::t_b32b05f450e052 1-5
+.agents/skills/to-spec/SKILL.md
+  s_396a970014d7ec::t_932a95d4bf5920 1-75
+.agents/skills/to-spec/agents/openai.yaml
+  s_396a970014d7ec::t_eedf6ce7f3059a 1-5
+.agents/skills/to-tickets/SKILL.md
+  s_396a970014d7ec::t_d43abc3092cfd4 1-105
+.agents/skills/to-tickets/agents/openai.yaml
+  s_396a970014d7ec::t_166b19883dc446 1-5
+.agents/skills/triage/AGENT-BRIEF.md
+  s_396a970014d7ec::t_febe3800165431 1-207
+.agents/skills/triage/OUT-OF-SCOPE.md
+  s_396a970014d7ec::t_65cec63bb7140b 1-105
+.agents/skills/triage/SKILL.md
+  s_396a970014d7ec::t_752bfb1639d0fb 1-112
+.agents/skills/triage/agents/openai.yaml
+  s_396a970014d7ec::t_26e17976d83e22 1-5
+.agents/skills/wait-what/SKILL.md
+  s_396a970014d7ec::t_5fa97e61434b65 1-7
+.agents/skills/wait-what/agents/openai.yaml
+  s_396a970014d7ec::t_15f9a5457c46ce 1-5
+.agents/skills/wayfinder/SKILL.md
+  s_396a970014d7ec::t_df708bcf1bdc87 1-128
+.agents/skills/wayfinder/agents/openai.yaml
+  s_396a970014d7ec::t_b2b5563fa47011 1-5
+.agents/skills/wizard/SKILL.md
+  s_396a970014d7ec::t_6deb073a8a94a2 1-44
+.agents/skills/wizard/agents/openai.yaml
+  s_396a970014d7ec::t_61c1af68c62355 1-3
+.agents/skills/wizard/template.sh
+  s_396a970014d7ec::t_00ba8565884269 1-204
+.agents/skills/worker-delegation/SKILL.md
+  s_396a970014d7ec::t_ade5b0e3e43b08 1-69
+.agents/skills/worker-delegation/agents/openai.yaml
+  s_396a970014d7ec::t_3034d56ceea169 1-4
+.agents/skills/writing-for-agents/SKILL-MECHANICS.md
+  s_396a970014d7ec::t_ed9bb6d18315dc 1-22
+.agents/skills/writing-for-agents/SKILL.md
+  s_396a970014d7ec::t_7dd4b157933634 1-81
+.agents/skills/writing-for-agents/agents/openai.yaml
+  s_396a970014d7ec::t_e03edec9ce7605 1-3
+agents/advisor.toml
+  s_396a970014d7ec::t_7eabb87f3c246f 1-36
+agents/deep-worker.toml
+  s_396a970014d7ec::t_a270d1aa17475f 1-24
+agents/explorer.toml
+  s_396a970014d7ec::t_16e1fd4b58d0a6 1-22
+agents/reviewer.toml
+  s_396a970014d7ec::t_9990ed88537761 1-17
+hooks/README.md
+  s_396a970014d7ec::t_fb6cd30fd24b1c 1-8
+hooks/linux_hooks.json
+  s_396a970014d7ec::t_97aea99fa360a3 1-30
+hooks/rtk_enforce.py
+  s_396a970014d7ec::t_6b09215e72c619 1-58
+hooks/run_hook_script.ps1
+  s_396a970014d7ec::t_ee3978ed3f4919 1-58
+hooks/run_hook_script.sh
+  s_396a970014d7ec::t_7d64ae989e5e23 1-18
+hooks/session_start.py
+  s_396a970014d7ec::t_a3a0ea872c9feb 1-30
+hooks/windows_hooks.json
+  s_396a970014d7ec::t_acea19aa9be459 1-30
+instructions/AGENTS.md
+  s_396a970014d7ec::t_1531ee431970c6 1-17
+instructions/CAVEMAN_FULL.md
+  s_396a970014d7ec::t_39d8cecc05220f 1-30
+instructions/CAVEMAN_ULTRA.md
+  s_396a970014d7ec::t_9bb395b440bf1e 1-30
+metadata/skill-lock.json
+  s_396a970014d7ec::t_1c9a3c16431a85 1-321
+plugins/ponytail/4.10.0/.agents/plugins/marketplace.json
+  s_396a970014d7ec::t_c6e5bac226d8b0 1-21
+plugins/ponytail/4.10.0/.agents/rules/ponytail.md
+  s_396a970014d7ec::t_35228cd73c9920 1-30
+plugins/ponytail/4.10.0/.claude-plugin/marketplace.json
+  s_396a970014d7ec::t_4388ba653fafe6 1-17
+plugins/ponytail/4.10.0/.claude-plugin/plugin.json
+  s_396a970014d7ec::t_fa54c5af9f1d5d 1-10
+plugins/ponytail/4.10.0/.clinerules/ponytail.md
+  s_396a970014d7ec::t_10c372457fb938 1-30
+plugins/ponytail/4.10.0/.codex-plugin/plugin.json
+  s_396a970014d7ec::t_4600a465e8b9ac 1-32
+plugins/ponytail/4.10.0/.cursor/rules/ponytail.mdc
+  s_396a970014d7ec::t_818a95ce91fe32 1-36
+plugins/ponytail/4.10.0/.devin-plugin/plugin.json
+  s_396a970014d7ec::t_1392d6a3429075 1-13
+plugins/ponytail/4.10.0/.env.example
+  s_396a970014d7ec::t_d43a268aff387e 1-2
+plugins/ponytail/4.10.0/.github/FUNDING.yml
+  s_396a970014d7ec::t_b56fc423b4d6e9 1
+plugins/ponytail/4.10.0/.github/copilot-instructions.md
+  s_396a970014d7ec::t_19328fc296e6b2 1-30
+plugins/ponytail/4.10.0/.github/plugin/marketplace.json
+  s_396a970014d7ec::t_a3aca298283ea2 1-20
+plugins/ponytail/4.10.0/.github/plugin/plugin.json
+  s_396a970014d7ec::t_4ff466dde4da18 1-16
+plugins/ponytail/4.10.0/.github/workflows/publish.yml
+  s_396a970014d7ec::t_f6f3b3847dd535 1-24
+plugins/ponytail/4.10.0/.github/workflows/test.yml
+  s_396a970014d7ec::t_f7ca083b7d2b47 1-36
+plugins/ponytail/4.10.0/.gitignore
+  s_396a970014d7ec::t_dd195208c13559 1-26
+plugins/ponytail/4.10.0/.grok-plugin/marketplace.json
+  s_396a970014d7ec::t_ee217ac56fe825 1-16
+plugins/ponytail/4.10.0/.kiro/steering/ponytail.md
+  s_396a970014d7ec::t_1ba507082e1d05 1-35
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail-audit/SKILL.md
+  s_396a970014d7ec::t_3cafbf83d1eeea 1-37
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail-debt/SKILL.md
+  s_396a970014d7ec::t_9f29cc29eef381 1-41
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail-gain/SKILL.md
+  s_396a970014d7ec::t_c217f7520a7be5 1-47
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail-help/SKILL.md
+  s_396a970014d7ec::t_1f25a6ef122bf9 1-70
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail-review/SKILL.md
+  s_396a970014d7ec::t_4ba9be68e2186d 1-52
+plugins/ponytail/4.10.0/.openclaw/skills/ponytail/SKILL.md
+  s_396a970014d7ec::t_cc7313e9b1324c 1-108
+plugins/ponytail/4.10.0/.opencode/command/ponytail-audit.md
+  s_396a970014d7ec::t_060119182bc1a0 1-5
+plugins/ponytail/4.10.0/.opencode/command/ponytail-debt.md
+  s_396a970014d7ec::t_eee801857d06df 1-5
+plugins/ponytail/4.10.0/.opencode/command/ponytail-gain.md
+  s_396a970014d7ec::t_4ad337025b9446 1-5
+plugins/ponytail/4.10.0/.opencode/command/ponytail-help.md
+  s_396a970014d7ec::t_748f0db266ec63 1-5
+plugins/ponytail/4.10.0/.opencode/command/ponytail-review.md
+  s_396a970014d7ec::t_c808ee36118c34 1-5
+plugins/ponytail/4.10.0/.opencode/command/ponytail.md
+  s_396a970014d7ec::t_9abbe6a59e18f0 1-5
+plugins/ponytail/4.10.0/.opencode/plugins/ponytail-frontmatter.cjs
+  s_396a970014d7ec::t_6b2672f98de473 1-23
+plugins/ponytail/4.10.0/.opencode/plugins/ponytail.mjs
+  s_396a970014d7ec::t_5ccf42bf6e4154 1-99
+plugins/ponytail/4.10.0/.qoder-plugin/plugin.json
+  s_396a970014d7ec::t_7c9cad394d2899 1-16
+plugins/ponytail/4.10.0/.qoder/rules/ponytail.md
+  s_396a970014d7ec::t_b7f53def0b1e6e 1-30
+plugins/ponytail/4.10.0/.windsurf/rules/ponytail.md
+  s_396a970014d7ec::t_1715daaf223f5d 1-30
+plugins/ponytail/4.10.0/AGENTS.md
+  s_396a970014d7ec::t_5468cc2ce7ec76 1-32
+plugins/ponytail/4.10.0/LICENSE
+  s_396a970014d7ec::t_73ee99b8355de5 1-21
+plugins/ponytail/4.10.0/README.es.md
+  s_396a970014d7ec::t_62ee1aa5e4de5f 1-329
+plugins/ponytail/4.10.0/README.ko.md
+  s_396a970014d7ec::t_7d3628636a43a5 1-346
+plugins/ponytail/4.10.0/README.md
+  s_396a970014d7ec::t_ec840ec9d114c6 1-395
+plugins/ponytail/4.10.0/__init__.py
+  s_396a970014d7ec::t_661610fb98c413 1-217
+plugins/ponytail/4.10.0/after-install.md
+  s_396a970014d7ec::t_ca4afef263944d 1-22
+plugins/ponytail/4.10.0/assets/benchmark-3model.svg
+  s_396a970014d7ec::t_898462849a613f 1-21
+plugins/ponytail/4.10.0/assets/benchmark-agentic.svg
+  s_396a970014d7ec::t_50f4eb4907768d 1-62
+plugins/ponytail/4.10.0/assets/logo-dark.svg
+  s_396a970014d7ec::t_a96a70d70ea918 1-115
+plugins/ponytail/4.10.0/assets/logo-greenpt-dark.svg
+  s_396a970014d7ec::t_79b6bef6e23b2f 1-27
+plugins/ponytail/4.10.0/assets/logo-greenpt.svg
+  s_396a970014d7ec::t_da7c3437227cee 1-27
+plugins/ponytail/4.10.0/assets/retriever-logo-dark.svg
+  s_396a970014d7ec::t_15e7d2f2a0ce21 1-4
+plugins/ponytail/4.10.0/assets/retriever-logo-light.svg
+  s_396a970014d7ec::t_76a01b61fbefae 1-4
+plugins/ponytail/4.10.0/benchmarks/README.md
+  s_396a970014d7ec::t_2b98744643219f 1-108
+plugins/ponytail/4.10.0/benchmarks/agentic/README.md
+  s_396a970014d7ec::t_26faaa78422058 1-172
+plugins/ponytail/4.10.0/benchmarks/agentic/complete.py
+  s_396a970014d7ec::t_166f23c4929dc8 1-154
+plugins/ponytail/4.10.0/benchmarks/agentic/judge.py
+  s_396a970014d7ec::t_f788402b153776 1-185
+plugins/ponytail/4.10.0/benchmarks/agentic/run.py
+  s_396a970014d7ec::t_9b245a697954e0 1-471
+plugins/ponytail/4.10.0/benchmarks/agentic/tasks.py
+  s_396a970014d7ec::t_36cd74c07d3e79 1-968
+plugins/ponytail/4.10.0/benchmarks/arms/baseline.js
+  s_396a970014d7ec::t_6d26c219ec1ec7 1-2
+plugins/ponytail/4.10.0/benchmarks/arms/caveman-SKILL.md
+  s_396a970014d7ec::t_6dd0592445aec6 1-67
+plugins/ponytail/4.10.0/benchmarks/arms/caveman.js
+  s_396a970014d7ec::t_9c3a31dcbe7464 1-8
+plugins/ponytail/4.10.0/benchmarks/arms/ponytail.js
+  s_396a970014d7ec::t_d4089cb4ee2569 1-8
+plugins/ponytail/4.10.0/benchmarks/behavior.js
+  s_396a970014d7ec::t_97311bb82a62b8 1-54
+plugins/ponytail/4.10.0/benchmarks/behavior.yaml
+  s_396a970014d7ec::t_a9e69982837748 1-40
+plugins/ponytail/4.10.0/benchmarks/benchmark-local.py
+  s_396a970014d7ec::t_d6f5f2b660dc79 1-164
+plugins/ponytail/4.10.0/benchmarks/claude-email.js
+  s_396a970014d7ec::t_21406518eeca86 1-40
+plugins/ponytail/4.10.0/benchmarks/correctness.js
+  s_396a970014d7ec::t_f80eaf4e3a7276 1-286
+plugins/ponytail/4.10.0/benchmarks/correctness.test.js
+  s_396a970014d7ec::t_49e33737403ed0 1-26
+plugins/ponytail/4.10.0/benchmarks/generate-examples.mjs
+  s_396a970014d7ec::t_07d4b745f25cfc 1-63
+plugins/ponytail/4.10.0/benchmarks/loc.js
+  s_396a970014d7ec::t_65e8f4a2de19a1 1-15
+plugins/ponytail/4.10.0/benchmarks/loc.test.js
+  s_396a970014d7ec::t_db991a926bddc0 1-23
+plugins/ponytail/4.10.0/benchmarks/model-email.js
+  s_396a970014d7ec::t_a38b206391b509 1-39
+plugins/ponytail/4.10.0/benchmarks/promptfooconfig.gemini.yaml
+  s_396a970014d7ec::t_9cf5799e616cd7 1-32
+plugins/ponytail/4.10.0/benchmarks/promptfooconfig.gpt-newest.yaml
+  s_396a970014d7ec::t_aaf00361de76fe 1-33
+plugins/ponytail/4.10.0/benchmarks/promptfooconfig.gpt.yaml
+  s_396a970014d7ec::t_9db2821d199fa6 1-32
+plugins/ponytail/4.10.0/benchmarks/promptfooconfig.yaml
+  s_396a970014d7ec::t_1625dfa5e37870 1-41
+plugins/ponytail/4.10.0/benchmarks/prompts.json
+  s_396a970014d7ec::t_64f53be2d5b3b4 1-15
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-12-caveman-vs-ponytail.md
+  s_396a970014d7ec::t_75daa826b47e68 1-71
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-12-v4-hardening-vs-caveman.md
+  s_396a970014d7ec::t_2a5da11703cbb2 1-125
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-15-llama3.2-local.md
+  s_396a970014d7ec::t_a3ab3b264d7470 1-76
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-16-correctness-gate-fix.md
+  s_396a970014d7ec::t_334d1a5a9edf30 1-107
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-16-robustness-audit.md
+  s_396a970014d7ec::t_b6dc3e22e7c614 1-129
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-17-agentic-safety.md
+  s_396a970014d7ec::t_2c3ea312bb8043 1-164
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-17-cost-verification.md
+  s_396a970014d7ec::t_a9ddb4f5f365d4 1-93
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-18-agentic.md
+  s_396a970014d7ec::t_de244aa0398364 1-219
+plugins/ponytail/4.10.0/benchmarks/results/2026-06-22-issue-245-217-comprehension.md
+  s_396a970014d7ec::t_96d0f2c79cec3a 1-98
+plugins/ponytail/4.10.0/benchmarks/robustness-audit.js
+  s_396a970014d7ec::t_c237805b739d34 1-205
+plugins/ponytail/4.10.0/commands/ponytail-audit.toml
+  s_396a970014d7ec::t_90e2ca6de7d1e2 1-2
+plugins/ponytail/4.10.0/commands/ponytail-debt.toml
+  s_396a970014d7ec::t_e9e59c37dfe926 1-2
+plugins/ponytail/4.10.0/commands/ponytail-gain.toml
+  s_396a970014d7ec::t_dbedbee620c800 1-2
+plugins/ponytail/4.10.0/commands/ponytail-help.toml
+  s_396a970014d7ec::t_5aa186e9517538 1-2
+plugins/ponytail/4.10.0/commands/ponytail-review.toml
+  s_396a970014d7ec::t_e01801f674a62d 1-2
+plugins/ponytail/4.10.0/commands/ponytail.toml
+  s_396a970014d7ec::t_246a3d309f26ea 1-2
+plugins/ponytail/4.10.0/docs/agent-portability.md
+  s_396a970014d7ec::t_3011842ececee2 1-49
+plugins/ponytail/4.10.0/docs/cursor-hooks.md
+  s_396a970014d7ec::t_34cb1f4b77838a 1-196
+plugins/ponytail/4.10.0/docs/platform-native.md
+  s_396a970014d7ec::t_56b7d2d3dfb143 1-211
+plugins/ponytail/4.10.0/examples/README.md
+  s_396a970014d7ec::t_faeb3dc081233f 1-17
+plugins/ponytail/4.10.0/examples/csv-sum.md
+  s_396a970014d7ec::t_4e4cca696fa0c6 1-71
+plugins/ponytail/4.10.0/examples/debounce.md
+  s_396a970014d7ec::t_b07ed66012a07e 1-211
+plugins/ponytail/4.10.0/examples/deep-clone.md
+  s_396a970014d7ec::t_42e76a006d955c 1-31
+plugins/ponytail/4.10.0/examples/email-validation.md
+  s_396a970014d7ec::t_c55d7b935fe99b 1-156
+plugins/ponytail/4.10.0/examples/group-by.md
+  s_396a970014d7ec::t_3c6406365dd834 1-35
+plugins/ponytail/4.10.0/examples/infinite-scroll.md
+  s_396a970014d7ec::t_b90885eec626cb 1-58
+plugins/ponytail/4.10.0/examples/modal-dialog.md
+  s_396a970014d7ec::t_b07b47f168428f 1-62
+plugins/ponytail/4.10.0/examples/number-formatting.md
+  s_396a970014d7ec::t_2c2e82c606b076 1-37
+plugins/ponytail/4.10.0/examples/rate-limit.md
+  s_396a970014d7ec::t_923e67094e25f1 1-272
+plugins/ponytail/4.10.0/examples/react-countdown.md
+  s_396a970014d7ec::t_e57c87d6d35011 1-390
+plugins/ponytail/4.10.0/examples/url-params.md
+  s_396a970014d7ec::t_e05f7c49daeecd 1-41
+plugins/ponytail/4.10.0/gemini-extension.json
+  s_396a970014d7ec::t_034148dc0fa3f4 1-6
+plugins/ponytail/4.10.0/hooks/claude-codex-hooks.json
+  s_396a970014d7ec::t_85972749ace252 1-41
+plugins/ponytail/4.10.0/hooks/copilot-hooks.json
+  s_396a970014d7ec::t_afcd40a2782909 1-21
+plugins/ponytail/4.10.0/hooks/cursor-hooks.json
+  s_396a970014d7ec::t_30e4f7160fb195 1-17
+plugins/ponytail/4.10.0/hooks/ponytail-activate.js
+  s_396a970014d7ec::t_86784743ecfb63 1-115
+plugins/ponytail/4.10.0/hooks/ponytail-config.js
+  s_396a970014d7ec::t_ac6646b9763317 1-169
+plugins/ponytail/4.10.0/hooks/ponytail-instructions.js
+  s_396a970014d7ec::t_169d1ef24f4d23 1-98
+plugins/ponytail/4.10.0/hooks/ponytail-mode-tracker.js
+  s_396a970014d7ec::t_204bd87af9ecac 1-155
+plugins/ponytail/4.10.0/hooks/ponytail-runtime.js
+  s_396a970014d7ec::t_8decee10cf4317 1-144
+plugins/ponytail/4.10.0/hooks/ponytail-statusline.ps1
+  s_396a970014d7ec::t_c4a8f4c0f3c251 1-24
+plugins/ponytail/4.10.0/hooks/ponytail-statusline.sh
+  s_396a970014d7ec::t_c51e05cf8043d2 1-18
+plugins/ponytail/4.10.0/hooks/ponytail-subagent.js
+  s_396a970014d7ec::t_66bfc5e0bc22d9 1-77
+plugins/ponytail/4.10.0/hooks/qoder-hooks.json
+  s_396a970014d7ec::t_43f9df5fd8afb3 1-26
+plugins/ponytail/4.10.0/opencode.json
+  s_396a970014d7ec::t_27f83ed6a73669 1-4
+plugins/ponytail/4.10.0/package.json
+  s_396a970014d7ec::t_9e94cdb0e3e8a0 1-48
+plugins/ponytail/4.10.0/pi-extension/index.js
+  s_396a970014d7ec::t_88ec7e7ad7e43c 1-211
+plugins/ponytail/4.10.0/pi-extension/package.json
+  s_396a970014d7ec::t_37852b52f218cf 1-8
+plugins/ponytail/4.10.0/pi-extension/test/extension.test.js
+  s_396a970014d7ec::t_8fef831680f624 1-243
+plugins/ponytail/4.10.0/pi-extension/test/helpers.test.js
+  s_396a970014d7ec::t_f4a47c8a5a61bf 1-151
+plugins/ponytail/4.10.0/plugin.json
+  s_396a970014d7ec::t_01b3fd068b87d3 1-3
+plugins/ponytail/4.10.0/plugin.yaml
+  s_396a970014d7ec::t_b3b6f7f45734a4 1-21
+plugins/ponytail/4.10.0/ponytail-mcp/README.md
+  s_396a970014d7ec::t_42594588c0a4ca 1-46
+plugins/ponytail/4.10.0/ponytail-mcp/index.js
+  s_396a970014d7ec::t_457e71fa43fd6b 1-52
+plugins/ponytail/4.10.0/ponytail-mcp/instructions.js
+  s_396a970014d7ec::t_d5d15f374a60fb 1-26
+plugins/ponytail/4.10.0/ponytail-mcp/package.json
+  s_396a970014d7ec::t_93576392ae23db 1-13
+plugins/ponytail/4.10.0/ponytail-mcp/test/instructions.test.js
+  s_396a970014d7ec::t_ec65ad36a948b3 1-22
+plugins/ponytail/4.10.0/scripts/build-openclaw-skills.js
+  s_396a970014d7ec::t_2310de4ffc7954 1-60
+plugins/ponytail/4.10.0/scripts/check-rule-copies.js
+  s_396a970014d7ec::t_58d6f23fc6d859 1-76
+plugins/ponytail/4.10.0/scripts/check-versions.js
+  s_396a970014d7ec::t_1d56e917f2ee0c 1-78
+plugins/ponytail/4.10.0/scripts/cursor-hooks.js
+  s_396a970014d7ec::t_593baa435adb84 1-135
+plugins/ponytail/4.10.0/scripts/publish-openclaw-skills.js
+  s_396a970014d7ec::t_14b30a25d89d0a 1-75
+plugins/ponytail/4.10.0/scripts/uninstall.js
+  s_396a970014d7ec::t_00a87038509694 1-77
+plugins/ponytail/4.10.0/skills/ponytail-audit/SKILL.md
+  s_396a970014d7ec::t_ecc544ab2e7c02 1-41
+plugins/ponytail/4.10.0/skills/ponytail-debt/SKILL.md
+  s_396a970014d7ec::t_d655c1f0a6a5fa 1-44
+plugins/ponytail/4.10.0/skills/ponytail-gain/SKILL.md
+  s_396a970014d7ec::t_7509ca3769e64f 1-50
+plugins/ponytail/4.10.0/skills/ponytail-help/SKILL.md
+  s_396a970014d7ec::t_8f70783ac95d4e 1-71
+plugins/ponytail/4.10.0/skills/ponytail-review/SKILL.md
+  s_396a970014d7ec::t_b42b39dd64c4a7 1-57
+plugins/ponytail/4.10.0/skills/ponytail/SKILL.md
+  s_396a970014d7ec::t_a39af2579227ab 1-120
+plugins/ponytail/4.10.0/tests/behavior.test.js
+  s_396a970014d7ec::t_b660dccddc7fb4 1-80
+plugins/ponytail/4.10.0/tests/commands.test.js
+  s_396a970014d7ec::t_da83eebfff482a 1-39
+plugins/ponytail/4.10.0/tests/copilot-plugin.test.js
+  s_396a970014d7ec::t_6fe04fdb23535b 1-35
+plugins/ponytail/4.10.0/tests/correctness.test.js
+  s_396a970014d7ec::t_3437cbb96b476d 1-221
+plugins/ponytail/4.10.0/tests/cursor-hooks.test.js
+  s_396a970014d7ec::t_ee15e396dc046c 1-317
+plugins/ponytail/4.10.0/tests/gemini-extension.test.js
+  s_396a970014d7ec::t_0852e3a505704b 1-91
+plugins/ponytail/4.10.0/tests/grok-plugin.test.js
+  s_396a970014d7ec::t_dee72284e969e4 1-26
+plugins/ponytail/4.10.0/tests/hermes-plugin.test.js
+  s_396a970014d7ec::t_e2bb633cdb4d89 1-236
+plugins/ponytail/4.10.0/tests/hooks-windows.test.js
+  s_396a970014d7ec::t_8a8ab5857458cd 1-114
+plugins/ponytail/4.10.0/tests/hooks.test.js
+  s_396a970014d7ec::t_8315034c86e464 1-496
+plugins/ponytail/4.10.0/tests/openclaw-skills.test.js
+  s_396a970014d7ec::t_53563bab322e82 1-26
+plugins/ponytail/4.10.0/tests/opencode-plugin.test.js
+  s_396a970014d7ec::t_af5aad6d4f8cc8 1-104
+plugins/ponytail/4.10.0/tests/package-scripts.test.js
+  s_396a970014d7ec::t_d7f6e73b34a0b1 1-25
+plugins/ponytail/4.10.0/tests/package.test.js
+  s_396a970014d7ec::t_5b9a4b0565c1d1 1-23
+plugins/ponytail/4.10.0/tests/qoder-plugin.test.js
+  s_396a970014d7ec::t_f1efb8cc26d798 1-84
+plugins/ponytail/4.10.0/tests/uninstall.test.js
+  s_396a970014d7ec::t_c709087df88377 1-153
+prompts/openspec-apply.md
+  s_396a970014d7ec::t_d59dda83e1ef5b 1-23
+prompts/openspec-archive.md
+  s_396a970014d7ec::t_a686ca04ce19fa 1-27
+prompts/openspec-proposal.md
+  s_396a970014d7ec::t_ec7e19cb1d7b38 1-28
+prompts/opsx-apply.md
+  s_396a970014d7ec::t_1c463d05d720d9 1-150
+prompts/opsx-archive.md
+  s_396a970014d7ec::t_b3ef19c2ab8ad0 1-155
+prompts/opsx-bulk-archive.md
+  s_396a970014d7ec::t_104f6d4baa2cc3 1-240
+prompts/opsx-continue.md
+  s_396a970014d7ec::t_355977103de7b4 1-112
+prompts/opsx-explore.md
+  s_396a970014d7ec::t_70c77e7b98feac 1-172
+prompts/opsx-ff.md
+  s_396a970014d7ec::t_4a3f4391c32619 1-92
+prompts/opsx-new.md
+  s_396a970014d7ec::t_d3844bc2ea1578 1-67
+prompts/opsx-onboard.md
+  s_396a970014d7ec::t_9d91b365c71419 1-523
+prompts/opsx-sync.md
+  s_396a970014d7ec::t_4eedff2e5e06ec 1-132
+prompts/opsx-verify.md
+  s_396a970014d7ec::t_1f94c467d9e969 1-162
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ebcc7fff0c0d8937adbddcd38c158c65074a8ad0",
+  "prompts": {},
+  "sessions": {
+    "s_396a970014d7ec": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09d93-e78c-7880-bff5-8ded7826edce",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
