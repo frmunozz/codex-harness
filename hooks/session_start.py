@@ -1,27 +1,20 @@
 """Optional portable SessionStart hook."""
 
 import json
-import os
-import sys
-from pathlib import Path
 
 
-def main() -> None:
-    try:
-        json.load(sys.stdin)
-    except Exception:
-        pass
-
-    agents_home = Path(os.environ.get("AGENTS_HOME", Path.home() / ".agents")).expanduser()
-    paths = [
-        agents_home / "skills" / "explore-delegation" / "SKILL.md",
-    ]
-    context = [p.read_text(encoding="utf-8").strip() for p in paths if p.is_file()]
-    output = {"hookEventName": "SessionStart"}
-    if context:
-        output["additionalContext"] = "\n\n---\n\n".join(context)
-    print(json.dumps({"continue": True, "hookSpecificOutput": output}))
-
-
-if __name__ == "__main__":
-    main()
+print(
+    json.dumps(
+        {
+            "continue": True,
+            "hookSpecificOutput": {
+                "hookEventName": "SessionStart",
+                "additionalContext": (
+                    "For open-ended exploration, source discovery, cross-file tracing, "
+                    "or document/web surveying, use $explore-delegation. "
+                    "Skip it for already-scoped tasks."
+                ),
+            },
+        }
+    )
+)
