@@ -12,12 +12,9 @@ def main() -> None:
     except Exception:
         pass
 
-    codex_home = Path(os.environ.get("CODEX_HOME", Path.home() / ".codex")).expanduser()
     agents_home = Path(os.environ.get("AGENTS_HOME", Path.home() / ".agents")).expanduser()
     paths = [
         agents_home / "skills" / "explore-delegation" / "SKILL.md",
-        codex_home / "RTK.md",
-        codex_home / "CAVEMAN_ULTRA.md",
     ]
     context = [p.read_text(encoding="utf-8").strip() for p in paths if p.is_file()]
     output = {"hookEventName": "SessionStart"}

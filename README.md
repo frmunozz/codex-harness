@@ -4,15 +4,14 @@ Portable, experimental Codex user configuration for Windows, macOS, and Linux.
 
 Contents:
 
-- `.agents/skills/` — shared skills. Codex can load these directly when working in this repository.
+- `skills/` — shared skills. Codex can load these directly when working in this repository.
 - `agents/` — reusable subagent presets.
-- `prompts/` — reusable prompt commands.
-- `instructions/` — global `AGENTS.md`, style guidance, and RTK guidance.
+- `instructions/` — global `AGENTS.md` guidance.
 - `hooks/` — cross-platform hook scripts and activation templates.
 - `config/config.toml.template` — safe portable configuration template.
 - `plugins/manifest.json` — plugin inventory and source notes.
 - `plugins/ponytail/` — offline Ponytail source snapshot.
-- `scripts/` — backup, install, status, and rollback tooling.
+- `scripts/` — backup, install, status, sync, and rollback tooling.
 
 ## Fast install
 
@@ -46,9 +45,12 @@ The installer backs up managed existing files first. Backups go to `backup/<time
 python scripts/codex_harness.py status
 python scripts/codex_harness.py install --dry-run
 python scripts/codex_harness.py backup
+python scripts/codex_harness.py sync --dry-run
 ```
 
 The backup is configuration-only. It does not copy `auth.json`, session databases, chat history, caches, worktrees, or runtime binaries.
+
+`sync` mirrors managed local files into the repository; review the diff before committing machine-specific values.
 
 ## Rollback
 
@@ -84,11 +86,7 @@ Override them with `CODEX_HOME` and `AGENTS_HOME` environment variables. The ins
 - `~/.codex/AGENTS.md`
 - `~/.codex/config.toml`
 - `~/.codex/agents/`
-- `~/.codex/prompts/`
 - `~/.codex/hooks/`
-- `~/.codex/RTK.md`
-- `~/.codex/CAVEMAN_FULL.md`
-- `~/.codex/CAVEMAN_ULTRA.md`
 - `~/.agents/skills/`
 
 Hooks are copied as scripts and templates. They are not activated automatically. Review the platform-specific JSON under `hooks/` before enabling them.
@@ -106,9 +104,9 @@ Plugins are listed in `plugins/manifest.json`. Managed OpenAI plugins should be 
 
 ## Updating the harness
 
-1. Edit the source files in this repository.
-2. Run `python scripts/codex_harness.py status`.
-3. Run `python scripts/codex_harness.py install --dry-run`.
+1. Run `python scripts/codex_harness.py sync --dry-run`.
+2. Run `python scripts/codex_harness.py sync --yes` after reviewing the diff.
+3. Run `python scripts/codex_harness.py status`.
 4. Commit only intended source changes.
 
-Codex loads repository skills from `.agents/skills/` and instructions from `AGENTS.md`; restart the Codex session after changing user-level configuration.
+Codex loads repository skills from `skills/` and instructions from `AGENTS.md`; restart the Codex session after changing user-level configuration.

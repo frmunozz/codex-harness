@@ -1,16 +1,6 @@
 {
   "version": 3,
   "skills": {
-    "caveman": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/productivity/caveman/SKILL.md",
-      "skillFolderHash": "17972a1bdbf5909b9dbdc435ad348f0bf45f8664",
-      "pluginName": "mattpocock-skills",
-      "installedAt": "2026-05-23T21:57:14.658Z",
-      "updatedAt": "2026-05-23T21:57:14.658Z"
-    },
     "diagnose": {
       "source": "mattpocock/skills",
       "sourceType": "github",
