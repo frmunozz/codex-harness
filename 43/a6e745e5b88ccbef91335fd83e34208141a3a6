@@ -1,0 +1,39 @@
+.agents/skills/codex-harness-install/SKILL.md
+  s_a6627b0a3a07bd::t_8039c35b3a6686 19,27-28
+  s_a6627b0a3a07bd::t_583f744b57e0e6 30-32,34-42
+  s_a6627b0a3a07bd::t_d7129a759658fa 16-18,20-26,29,43
+scripts/codex_harness.py
+  s_a6627b0a3a07bd::t_d7129a759658fa 29-32,94
+README.md
+  s_a6627b0a3a07bd::t_0c774fe2e7b794 7-8,102,112
+  s_a6627b0a3a07bd::t_d7129a759658fa 12,40,53,91,108-110
+.agents/skills/codex-harness-backup/SKILL.md
+  s_a6627b0a3a07bd::t_d7129a759658fa 13
+.agents/skills/codex-harness-sync/SKILL.md
+  s_a6627b0a3a07bd::t_d7129a759658fa 12,15
+plugins/manifest.json
+  s_a6627b0a3a07bd::t_42d8b731379e5f 21,23-24
+config/config.toml.template
+  s_a6627b0a3a07bd::t_d7129a759658fa 1-3
+AGENTS.md
+  s_a6627b0a3a07bd::t_d7129a759658fa 19
+  s_a6627b0a3a07bd::t_42d8b731379e5f 20-21
+.agents/skills/codex-harness-rollback/SKILL.md
+  s_a6627b0a3a07bd::t_d7129a759658fa 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43a6e745e5b88ccbef91335fd83e34208141a3a6",
+  "prompts": {},
+  "sessions": {
+    "s_a6627b0a3a07bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b794-c201-7120-9c0b-5ec51d01fb0d",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
