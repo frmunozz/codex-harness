@@ -1,0 +1,23 @@
+hooks/session_start.py
+  s_8a940f0332c319::t_a7d9c1084d3b7f 6-20
+hooks/README.md
+  s_8a940f0332c319::t_a7d9c1084d3b7f 3-5,7-8,10
+config/config.toml.template
+  s_8a940f0332c319::t_a7d9c1084d3b7f 24-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4649fbf42467f9125d84b1967714fbacdf173d34",
+  "prompts": {},
+  "sessions": {
+    "s_8a940f0332c319": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7ad-f01a-7483-aec0-83892af294be",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
