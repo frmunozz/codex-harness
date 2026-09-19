@@ -1,0 +1,55 @@
+.agents/skills/codex-harness-install/SKILL.md
+  s_8dbcb1ada23c5d::t_970ea791a8a017 54,56-58
+  s_8dbcb1ada23c5d::t_1ee80bd02bec41 14,17-18,23,25-26,28-31,36,39-50,55,59-60,90
+  s_21770a36c082bc::t_bb8835f8909724 11-12,19-22,24,27,63
+  s_8dbcb1ada23c5d::t_f7555cebe5b160 13,15-16,37-38,51-53,61,74
+  s_8dbcb1ada23c5d::t_57dbc6df69e0c6 32-35
+.agents/skills/codex-harness-rollback/SKILL.md
+  s_21770a36c082bc::t_bb8835f8909724 13-14,16-17
+  s_8dbcb1ada23c5d::t_c8856afc3efd00 18
+.agents/skills/codex-harness-backup/SKILL.md
+  s_8dbcb1ada23c5d::t_c8856afc3efd00 3,13
+scripts/install.ps1
+  s_8dbcb1ada23c5d::t_ebf6e5f731bbf7 9-13,18
+scripts/codex_harness.py
+  s_8dbcb1ada23c5d::t_6ecf1fd6d9af1a 101
+  s_21770a36c082bc::t_78d848eb1b597d 248-249
+  s_21770a36c082bc::t_8eae4abb653e3c 256,261-264,266,341-344
+  s_21770a36c082bc::t_f9f13c6395cbd6 13,348
+  s_8dbcb1ada23c5d::t_4a2ce2aa4c15e8 306-308
+  s_21770a36c082bc::t_69676c18416365 28-29,69-73,134,137-142,147,152-153,178,180,184-187,189-195,197-198,277,309-314,321,325,398
+  s_8dbcb1ada23c5d::t_dc12b6be13ea95 32-36,91-100,102-107,136,151,179,181-183,272,274-276
+  s_9c4b21e4622e5a::t_324e7aed64eb1e 30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "60b98ddc7d9928d9bd9517d2e2a1f8dc3ace1eaf",
+  "prompts": {},
+  "sessions": {
+    "s_21770a36c082bc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7c6-4abd-7062-beaa-9d414fc5a282",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_8dbcb1ada23c5d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7c9-7a1c-76d1-bd6c-56e8289a72a3",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_9c4b21e4622e5a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7f0-28f3-72a0-8094-019eee40c799",
+        "model": "unknown"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
