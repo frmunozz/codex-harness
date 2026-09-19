@@ -1,0 +1,50 @@
+CHANGELOG.md
+  s_fd5b63b4728bf8::t_106e6cb141438f 30-32
+  s_fd5b63b4728bf8::t_f55cf7c4c51e7f 27-29
+AGENTS.md
+  s_fd5b63b4728bf8::t_7954157686873f 19
+docs/recommendations.md
+  s_fd5b63b4728bf8::t_f832aca202ff48 69
+  s_fd5b63b4728bf8::t_1574178d483382 15-16,64-68,70
+  s_fd5b63b4728bf8::t_0186b6df242ed3 14,59-63
+skills/remote-skills.json
+  s_fd5b63b4728bf8::t_25416f793c6cfc 1-2,22-52
+  s_fd5b63b4728bf8::t_1e8464d357a22a 3-21
+.agents/skills/codex-harness-sync/SKILL.md
+  s_fd5b63b4728bf8::t_0d003e55f38e9d 24
+  s_fd5b63b4728bf8::t_5fd49ecc0a4c1d 36
+  s_fd5b63b4728bf8::t_00dd172876cf55 20-23,25-35,37-39,45,47
+.agents/skills/codex-harness-install/SKILL.md
+  s_fd5b63b4728bf8::t_5fd49ecc0a4c1d 29
+  s_fd5b63b4728bf8::t_eb902c8431e18f 32,43,46
+  s_fd5b63b4728bf8::t_ee98f06edb8eff 30-31,49-53,85
+.agents/skills/codex-harness-audit/SKILL.md
+  s_fd5b63b4728bf8::t_9ba590459654d6 124-128
+  s_fd5b63b4728bf8::t_f748c2cadc7377 116-118,121-122
+  s_fd5b63b4728bf8::t_d18f216e3b4181 24,119,135,141-147
+  s_fd5b63b4728bf8::t_bd0eabdb83cf0c 123
+README.md
+  s_fd5b63b4728bf8::t_f832aca202ff48 141
+  s_fd5b63b4728bf8::t_053e22684a7ea2 14,44,109,138-140
+  s_fd5b63b4728bf8::t_55d4921d1deab3 114,117-121,142-144
+  s_fd5b63b4728bf8::t_f55cf7c4c51e7f 7
+.agents/skills/codex-harness-remote-update/SKILL.md
+  s_fd5b63b4728bf8::t_dd9f244189d0e6 77-80
+  s_fd5b63b4728bf8::t_9f2b3d5943def4 1-76,81-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "74430a66b3bd00452d73c61a1fa0acc6d9c72fbe",
+  "prompts": {},
+  "sessions": {
+    "s_fd5b63b4728bf8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b809-ea79-7432-89ca-9d1b8976205f",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
