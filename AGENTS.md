@@ -12,7 +12,7 @@ When asked to install it:
 
 When asked to roll back, use `list-backups`, choose the requested snapshot, then run `rollback` and report the restored paths.
 
-When asked to sync the local setup into this repository, run `sync --dry-run`, review the diff for machine-specific values, then run `sync --yes` and validate with `status`.
+When asked to sync the local setup into this repository, run `sync --dry-run`, compare the local `config.toml` with the template, propose only portable candidates, get an explicit human decision for each candidate, then run `sync --yes` and validate with `status`.
 
 Never copy credentials, session databases, chat history, caches, worktrees, or runtime binaries. Do not install plugins by copying Codex's versioned cache; use `plugins/manifest.json` and the plugin's official install path.
 

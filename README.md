@@ -66,7 +66,7 @@ changes to the existing maintenance skills.
 
 The backup contains configuration plus the two skill stores and the skills lock. It does not copy `auth.json`, session databases, chat history, caches, worktrees, or runtime binaries.
 
-`sync` mirrors managed local files into the repository; `config.toml` is intentionally excluded because it is machine-specific. Review the diff before committing other machine-specific values.
+`sync` mirrors managed local files into the repository; its executable intentionally excludes `config.toml`. The sync skill compares the local config with the template, proposes portable candidates, and requires explicit human approval before adding any selected settings to `config/config.toml.template`. Paths, trust entries, commands, runtime/plugin state, and secrets remain local. Review the diff before committing.
 
 ## Rollback
 
@@ -130,11 +130,12 @@ Plugins are listed in `plugins/manifest.json`. The harness does not vendor or in
 ## Updating the harness
 
 1. Run `python scripts/codex_harness.py sync --dry-run`.
-2. Run `python scripts/codex_harness.py sync --yes` after reviewing the diff.
-3. Edit `config/config.toml.template` intentionally when the portable baseline changes; never sync a user's local `config.toml` into it.
-4. Review the sync skill's proposed `plugins/manifest.json` update against live Codex plugin state.
-5. Run `python scripts/codex_harness.py status`.
-6. Commit only intended source changes.
+2. Let the sync skill compare local `config.toml` with the template and show a redacted proposal for portable candidates.
+3. Approve or reject candidates explicitly; apply only approved template edits. Never sync a user's local `config.toml` wholesale.
+4. Run `python scripts/codex_harness.py sync --yes` after reviewing the managed-file diff.
+5. Review the sync skill's proposed `plugins/manifest.json` update against live Codex plugin state.
+6. Run `python scripts/codex_harness.py status`.
+7. Commit only intended source changes.
 
 Run `/codex-harness-audit` after updating or installing the harness.
 

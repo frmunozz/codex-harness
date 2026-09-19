@@ -24,6 +24,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-19:** Extended sync guidance to compare the developer's local
+  `config.toml` with the portable template, propose safe candidates, and require
+  explicit human approval before adding selected settings.
 - **2026-09-19:** Made configuration merging agent-guided and backup-only;
   preserved user-owned configuration while clarifying install boundaries.
 - **2026-09-19:** Hardened backup, install, rollback, and sync behavior for
