@@ -10,7 +10,7 @@ Contents:
 - `instructions/` — global `AGENTS.md` guidance.
 - `hooks/` — cross-platform hook scripts and activation templates.
 - `config/config.toml.template` — safe portable configuration baseline for the install skill.
-- `plugins/manifest.json` — plugin inventory and source notes.
+- `plugins/manifest.json` — desired plugin inventory and source notes; install/sync skills reconcile it with live plugin state.
 - `scripts/` — backup, install, status, sync, and rollback tooling.
 
 ## Fast install
@@ -106,7 +106,8 @@ Plugins are listed in `plugins/manifest.json`. The harness does not vendor or in
 1. Run `python scripts/codex_harness.py sync --dry-run`.
 2. Run `python scripts/codex_harness.py sync --yes` after reviewing the diff.
 3. Edit `config/config.toml.template` intentionally when the portable baseline changes; never sync a user's local `config.toml` into it.
-4. Run `python scripts/codex_harness.py status`.
-5. Commit only intended source changes.
+4. Review the sync skill's proposed `plugins/manifest.json` update against live Codex plugin state.
+5. Run `python scripts/codex_harness.py status`.
+6. Commit only intended source changes.
 
 Codex loads repository-only skills from `.agents/skills/`, distributable skills from `skills/`, and instructions from `AGENTS.md`; restart the Codex session after changing user-level configuration.

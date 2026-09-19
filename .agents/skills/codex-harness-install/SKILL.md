@@ -26,18 +26,21 @@ Use the repository root as the working directory. Use the available Python comma
    - Preserve unrelated settings and machine-specific paths, MCP commands, project trust entries, plugin/marketplace entries, model settings, comments, and formatting where practical. Never replace the whole file just to apply the baseline.
    - Show the proposed config diff and get explicit human approval before writing. Apply the smallest valid edit, then validate the resolved file with an available TOML parser (`tomllib` or `tomli`) and report the changed path.
    - Run `$PYTHON scripts/codex_harness.py status` again after the config merge.
-7. Recommend Ponytail as a post-install step:
-   - Check `node --version`; report if Node.js is unavailable. Ponytail skills still work without Node.js, but its lifecycle hooks do not.
-   - Check configured marketplaces with `codex plugin marketplace list`, then open `/plugins` in Codex and search for Ponytail. If Ponytail is already installed, report its state/version and skip installation.
-   - If Ponytail is absent, explain that the next action changes the user's plugin configuration and requires explicit human approval. Do not run it yet. Show the planned commands:
+7. Reconcile plugins from `plugins/manifest.json`:
+   - Read `enabled_in_source_profile` as the desired plugin inventory. It is not a version lock and does not mean “copy from cache.”
+   - Inspect live plugin state in Codex's `/plugins` browser and run `codex plugin marketplace list` when the CLI is available. Inspect explicit `[plugins]` enable/disable overrides in the resolved `config.toml`, but do not infer installed state from `config.toml` or cache alone.
+   - Classify every desired entry as installed/enabled, installed/disabled, missing, or not inspectable. Keep unrelated user plugins. Treat an explicit local disable as user intent and report it instead of silently overriding it.
+   - Show missing or disabled desired plugins, their marketplace/source, and the proposed official install or enable action. Get explicit human approval before changing plugin state. Use `/plugins` or the current official marketplace mechanism; never copy plugin repositories or `.codex/plugins/cache`.
+   - For Ponytail specifically, check `node --version`; report if Node.js is unavailable. Ponytail skills still work without Node.js, but its lifecycle hooks do not. If absent, show the planned commands and wait for approval:
 
      ```text
      codex plugin marketplace add DietrichGebert/ponytail
      codex plugin add ponytail@ponytail
      ```
 
-     Run the marketplace command only if `DietrichGebert/ponytail` is not already configured. After approval, install Ponytail from that marketplace; do not copy the repository, the old offline snapshot, or `.codex/plugins/cache`.
-   - After approval and installation, open `/hooks`, have the human review and trust Ponytail's two lifecycle hooks, then restart Codex/start a new thread. Confirm Ponytail appears installed in `/plugins`.
-   - If CLI plugin commands are unavailable, give the human the equivalent Codex UI path: `/plugins` → add the `https://github.com/DietrichGebert/ponytail` marketplace → install Ponytail → review `/hooks`.
+     Run the marketplace command only if `DietrichGebert/ponytail` is not already configured. After approval, install Ponytail from that marketplace.
+   - After any approved installation, enablement, or hook trust action, recheck `/plugins`, then restart Codex/start a new thread when required. For Ponytail, open `/hooks` and have the human review and trust its two lifecycle hooks.
+   - If CLI plugin commands are unavailable, give the human the equivalent Codex UI path: `/plugins` → select the relevant marketplace → install or enable the plugin. For Ponytail, add `https://github.com/DietrichGebert/ponytail` first, then review `/hooks`.
+   - Report installed/enabled, installed/disabled, missing, and deferred entries. Do not modify `plugins/manifest.json` during install unless the human explicitly asks for a profile change.
 
-Done means the harness install completed, status succeeds, backup IDs are reported, config merge is approved and valid or explicitly deferred, and Ponytail is either already installed, installed after explicit approval, or explicitly deferred by the human.
+Done means the harness install completed, status succeeds, backup IDs are reported, config merge is approved and valid or explicitly deferred, and every desired plugin is classified with approved changes completed or clearly deferred.

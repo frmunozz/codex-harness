@@ -20,6 +20,7 @@
   ],
   "install_policy": "Ponytail is not vendored. If absent, install it only after human approval through the current Codex/plugin mechanism. Do not copy .codex/plugins/cache between machines.",
   "notes": [
+    "enabled_in_source_profile is the desired plugin inventory, not a version lock or cache mirror.",
     "Ponytail source: https://github.com/DietrichGebert/ponytail",
     "The Codex harness install skill contains the approval-gated setup procedure."
   ]
