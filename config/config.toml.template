@@ -1,5 +1,6 @@
-# Portable Codex template.
-# Copy or merge into ~/.codex/config.toml.
+# Portable Codex baseline.
+# The install skill reviews and merges these settings into ~/.codex/config.toml.
+# The installer script does not replace the user's config file.
 # Keep machine-specific paths, MCP commands, project trust entries, and runtime values local.
 
 approval_policy = "on-request"

@@ -18,9 +18,9 @@
     "unified-computer-use@openai-bundled",
     "visualize@openai-bundled"
   ],
-  "offline_snapshot": "plugins/ponytail/4.10.0",
-  "install_policy": "Reinstall managed plugins through the current Codex/plugin mechanism. Do not copy .codex/plugins/cache between machines.",
+  "install_policy": "Ponytail is not vendored. If absent, install it only after human approval through the current Codex/plugin mechanism. Do not copy .codex/plugins/cache between machines.",
   "notes": [
-    "The Ponytail snapshot retains its upstream metadata and license files."
+    "Ponytail source: https://github.com/DietrichGebert/ponytail",
+    "The Codex harness install skill contains the approval-gated setup procedure."
   ]
 }

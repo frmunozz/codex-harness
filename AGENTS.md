@@ -16,4 +16,6 @@ When asked to sync the local setup into this repository, run `sync --dry-run`, r
 
 Never copy credentials, session databases, chat history, caches, worktrees, or runtime binaries. Do not install plugins by copying Codex's versioned cache; use `plugins/manifest.json` and the plugin's official install path.
 
-`README.md` is the human-facing source of truth. `scripts/codex_harness.py` is the executable source of truth for backup, install, sync, and rollback behavior.
+`README.md` is the human-facing source of truth. `scripts/codex_harness.py` is the executable source of truth for file copy, backup, sync, and rollback behavior. The install skill is the source of truth for the human-approved config merge.
+
+Repository-only harness maintenance skills live under `.agents/skills/`; do not move them into the distributable `skills/` tree.

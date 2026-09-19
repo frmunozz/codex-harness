@@ -21,11 +21,14 @@ AGENTS_HOME = Path(os.environ.get("AGENTS_HOME", Path.home() / ".agents")).expan
 # scope, target-relative path, package-relative source path
 MANAGED: Tuple[Tuple[str, Path, Path], ...] = (
     ("codex", Path("AGENTS.md"), Path("instructions/AGENTS.md")),
-    ("codex", Path("config.toml"), Path("config/config.toml.template")),
     ("codex", Path("agents"), Path("agents")),
     ("codex", Path("hooks"), Path("hooks")),
     ("agents", Path("skills"), Path("skills")),
 )
+
+# Config is preserved for rollback, but merged by the install skill instead of
+# being copied over a user's machine-specific settings.
+BACKUP_ONLY: Tuple[Tuple[str, Path], ...] = (("codex", Path("config.toml")),)
 
 # Files owned by older harness versions. Remove only these exact paths during
 # install so unrelated user files survive the migration.
@@ -88,6 +91,7 @@ def managed_files() -> Iterable[Tuple[str, Path, Path, Path]]:
 def backup_files() -> Iterable[Tuple[str, Path]]:
     for scope, relative, _, _ in managed_files():
         yield scope, relative
+    yield from BACKUP_ONLY
     yield from LEGACY_FILES
 
 
