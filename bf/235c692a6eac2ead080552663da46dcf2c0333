@@ -1,0 +1,19 @@
+metadata/matt-pocock-skills.json
+  s_8dbcb1ada23c5d::t_9df579de8274f4 1-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bf235c692a6eac2ead080552663da46dcf2c0333",
+  "prompts": {},
+  "sessions": {
+    "s_8dbcb1ada23c5d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7c9-7a1c-76d1-bd6c-56e8289a72a3",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
