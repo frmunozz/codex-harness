@@ -1,0 +1,88 @@
+docs/opencodex.md
+  s_1facbad8fd4696::t_371b9cf0b6c1ff 1-191
+docs/recommendations.md
+  s_a661286f1766cd::t_3a1d79d0db1c67 17
+  s_a661286f1766cd::t_5b7ef932389fbd 1-13,19-38,44-60,69-80,82-95,101-113
+  s_a661286f1766cd::t_1e6f61bb192f45 81
+  s_8dbcb1ada23c5d::t_0b39d98bcc9e9b 14-16,18,39,43,61-62,96-97
+  s_8dbcb1ada23c5d::t_b912b39d9f6ce6 40-42,63-68,98-100
+CHANGELOG.md
+  s_d99c75f1306282::t_3aeb39b2ea1378 1-47
+AGENTS.md
+  s_d99c75f1306282::t_3aeb39b2ea1378 22-35,39-40
+  s_a661286f1766cd::t_5b7ef932389fbd 19
+  s_d99c75f1306282::t_a213261fcbef86 36-38
+README.md
+  s_8dbcb1ada23c5d::t_b912b39d9f6ce6 42-44,102-103,105,109,117
+  s_1facbad8fd4696::t_371b9cf0b6c1ff 46-50
+  s_a661286f1766cd::t_5b7ef932389fbd 15,61-65,139
+  s_8dbcb1ada23c5d::t_86fb1e07dc11fa 7,14,45,106-108,111-115,141
+  s_8dbcb1ada23c5d::t_970ea791a8a017 67
+  s_21770a36c082bc::t_98572a496a0c0b 85,94,97,100
+  s_8dbcb1ada23c5d::t_e955bbca9e825b 110
+  s_8dbcb1ada23c5d::t_c6d800cbdf377e 116
+  s_9c4b21e4622e5a::t_fabaae6e89756d 66,140
+.agents/skills/codex-harness-audit/SKILL.md
+  s_8dbcb1ada23c5d::t_4772463a1f0966 124
+  s_8dbcb1ada23c5d::t_970ea791a8a017 134-138
+  s_8dbcb1ada23c5d::t_57dbc6df69e0c6 140-144
+  s_8dbcb1ada23c5d::t_ec8c57b38e73c9 24,67-68,96-98,148
+  s_8dbcb1ada23c5d::t_8cbc5aac0122ec 116-123,125-133,139,145-146,150-152,193-194
+  s_a661286f1766cd::t_5b7ef932389fbd 1-23,25-66,69-95,99-115,147,149,153-192,195-204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5b67dcfcb89bc47ece4b9a41eccb4572a6464a72",
+  "prompts": {},
+  "sessions": {
+    "s_1facbad8fd4696": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b676-2d67-74a3-a9e3-21f5a83e6e35",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_21770a36c082bc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7c6-4abd-7062-beaa-9d414fc5a282",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_8dbcb1ada23c5d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7c9-7a1c-76d1-bd6c-56e8289a72a3",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_9c4b21e4622e5a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7f0-28f3-72a0-8094-019eee40c799",
+        "model": "unknown"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_a661286f1766cd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7cd-df21-7b51-9f6e-a78e0c047e5f",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    },
+    "s_d99c75f1306282": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b7fc-6fd2-7f83-8a76-8212ab05ec88",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
