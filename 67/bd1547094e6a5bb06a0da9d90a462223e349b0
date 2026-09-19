@@ -1,0 +1,27 @@
+AGENTS.md
+  s_a6627b0a3a07bd::t_0d5c289f237a03 19
+.agents/skills/codex-harness-sync/SKILL.md
+  s_a6627b0a3a07bd::t_0d5c289f237a03 15-21,23
+plugins/manifest.json
+  s_a6627b0a3a07bd::t_0d5c289f237a03 23
+.agents/skills/codex-harness-install/SKILL.md
+  s_a6627b0a3a07bd::t_0d5c289f237a03 29-34,41-44,46
+README.md
+  s_a6627b0a3a07bd::t_0d5c289f237a03 13,109-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "67bd1547094e6a5bb06a0da9d90a462223e349b0",
+  "prompts": {},
+  "sessions": {
+    "s_a6627b0a3a07bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b794-c201-7120-9c0b-5ec51d01fb0d",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
