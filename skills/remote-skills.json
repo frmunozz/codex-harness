@@ -1,7 +1,7 @@
 [
   {
     "source": "https://github.com/frmunozz/codex-harness",
-    "ref": "75d82764c4f144d6d1945363b1ccf95b829941f0",
+    "ref": "a3edf45df72dfbac5a23be12764b66b714ce2bd8",
     "skills": [
       "worker-delegation",
       "advisor-orchestrator",
@@ -15,7 +15,8 @@
       "pdf",
       "imagegen",
       "screenshot",
-      "playwright"
+      "playwright",
+      "git-commit"
     ]
   },
   {
