@@ -1,0 +1,36 @@
+config/config.toml.template
+  h_0810b9cae0751d 14
+CHANGELOG.md
+  h_0810b9cae0751d 29-32
+agents/advisor.toml
+  s_02436429daa455::t_6b79e8a178b691 2,4,6,8,10,12-20,24,27,42
+skills/custom/advisor-consultation/SKILL.md
+  s_02436429daa455::t_9e2bcce1b4564e 3,8,12,14-16,25-26,30,32,34,36,47-73,77,81-83,90-94,97,103,116-118,124,140,142,148-154,156,158,160-180,184-194,198,213
+skills/custom/advisor-consultation/agents/openai.yaml
+  s_02436429daa455::t_1bf4f8007510a5 3-4
+skills/custom/advisor-orchestrator/SKILL.md
+  s_02436429daa455::t_dbde823e29767c 3,46,48,50,52-60,77,83-93
+skills/custom/advisor-orchestrator/agents/openai.yaml
+  s_02436429daa455::t_bc71ffddbc21d0 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5b5ddeb358345cf29f4f51ce44b46632277831d6",
+  "prompts": {},
+  "humans": {
+    "h_0810b9cae0751d": {
+      "author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_02436429daa455": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0bbb7-a870-7e31-85d7-eceb2a926d27",
+        "model": "unknown"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
