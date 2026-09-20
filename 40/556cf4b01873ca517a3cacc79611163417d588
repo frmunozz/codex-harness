@@ -1,0 +1,19 @@
+skills/remote-skills.json
+  s_b84c4e2bfa3bc8::t_58bad6eea49c3f 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40556cf4b01873ca517a3cacc79611163417d588",
+  "prompts": {},
+  "sessions": {
+    "s_b84c4e2bfa3bc8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c0a1-308a-7942-80eb-27e09688054c",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
