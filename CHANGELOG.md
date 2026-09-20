@@ -26,6 +26,10 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-20:** Broadened advisor orchestration to cover high-impact decision
+  and validation checkpoints, added bounded clarification dialogue and
+  consultation-scoped agent cleanup, raised Astra advisor reasoning to medium,
+  and increased the portable concurrent-subagent limit to 12.
 - **2026-09-19:** Added commit-pinned remote tracking for the harness skill
   source and a human-approved updater skill for selecting newer commits or
   tags on the repository, local setup, or both.

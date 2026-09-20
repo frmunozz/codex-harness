@@ -1,7 +1,7 @@
 interface:
   display_name: "Advisor Orchestrator"
-  short_description: "Implement with selective Explorer, Sol, Astra, and workflow-owned code review"
-  default_prompt: "Use the Luna-root implementation flow. Implement normally in the root, use explorer for missing facts, deep-worker only for difficult implementation inside settled boundaries, advisor only for consequential unresolved judgment, and leave routine code review to the configured code-review workflow."
+  short_description: "Implement with selective Explorer, Sol, Astra checkpoints, and workflow-owned review"
+  default_prompt: "Use the Luna-root implementation flow. Implement normally in the root, use fresh explorers for material missing facts, deep-worker only for difficult implementation inside settled boundaries, advisor-consultation for qualifying high-impact decision or validation checkpoints, close subagents after their bounded work completes, and leave routine code review to the configured code-review workflow."
 
 policy:
   allow_implicit_invocation: false

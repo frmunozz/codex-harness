@@ -1,6 +1,6 @@
 ---
 name: advisor-orchestrator
-description: Run the Luna-root implementation workflow with selective exploration, deep implementation escalation, critical advisor consultation, and workflow-owned code review.
+description: Run the Luna-root implementation workflow with selective exploration, deep implementation escalation, high-impact advisor checkpoints, and workflow-owned code review.
 disable-model-invocation: true
 ---
 
@@ -43,13 +43,21 @@ Typical cases:
 
 Do not use `deep-worker` to choose architecture, product behavior, external contracts, canonical ownership, migration strategy, or significant security boundaries. Those decisions return to the root.
 
-### Consequential unresolved judgment → advisor branch
+### High-impact judgment or validation → advisor branch
 
-If a decision appears consequential and remains unresolved after targeted fact finding, invoke `advisor-consultation`.
+Use `advisor-consultation` when high-impact work reaches a checkpoint where either unresolved judgment remains or an independent stronger-model validation could materially reduce risk.
 
-Do not reproduce or reinterpret the advisor gates, packet format, invocation modes, response contract, or follow-up rules here.
+Useful checkpoints can occur before or after implementation, including:
 
-`advisor-consultation` is the single source of truth for advisor escalation. Follow that skill and return the resulting recommendation to the root.
+- deciding among consequential alternatives;
+- validating a high-impact implementation plan before execution;
+- challenging the technical approach for a substantial feature or multi-module change;
+- auditing a consequential implementation against a critical invariant or compatibility/security concern;
+- validating a critical or cross-cutting fix before accepting it.
+
+Do not invoke the advisor for every feature, plan, fix, or implementation. `advisor-consultation` owns the exact impact gate, judgment/validation reasons, consultation packet, clarification protocol, and final response contract.
+
+Each advisor consultation starts with a fresh `advisor`. Keep that advisor alive for any targeted clarification dialogue required by the consultation, then close it immediately after final advice is returned and integrated. Do not retain completed advisors for later checkpoints.
 
 The root retains final decision authority.
 
@@ -66,11 +74,22 @@ When the implementation workflow reaches its prescribed code-review stage, use t
 
 Its review subagents continue using the configured `reviewer` profile. Routine review findings return to the root.
 
-A review finding reaches the advisor only if it exposes consequential unresolved judgment that passes both advisor gates.
+A review finding reaches `advisor-consultation` only when it exposes a high-impact decision or validation checkpoint that satisfies that skill's trigger.
 
 ### Otherwise → root continues implementation
 
 Luna continues implementing directly. Do not delegate simply for role purity or because a subagent exists.
+
+## Subagent lifecycle
+
+Treat subagents as disposable bounded resources rather than persistent workstream members:
+
+- `explorer`: fresh per bounded investigation; return evidence, then close;
+- `deep-worker`: scoped to one bounded implementation assignment; return result, then close;
+- `advisor`: fresh per consultation; allow bounded clarification dialogue, return final advice, then close;
+- `reviewer`: fresh per independent review axis/pass when lifecycle is controlled by this orchestration; return findings, then close.
+
+Do not keep idle agents alive for possible later reuse. Spawn a new agent when a later checkpoint requires a fresh bounded context.
 
 ## Context discipline
 

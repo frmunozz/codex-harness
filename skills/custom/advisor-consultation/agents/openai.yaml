@@ -1,7 +1,7 @@
 interface:
   display_name: "Advisor Consultation"
-  short_description: "Escalate consequential unresolved engineering judgment"
-  default_prompt: "Establish the relevant facts first, verify both advisor gates, build one minimal decision packet, consult the advisor, and return the recommendation to the root for the final decision."
+  short_description: "Use Astra for high-impact decisions and validation checkpoints"
+  default_prompt: "Establish cheap facts first, verify the impact gate and a judgment or validation reason, spawn one fresh advisor for the checkpoint, support bounded clarification dialogue in that consultation, return the final advice to the root, and close the advisor."
 
 policy:
   allow_implicit_invocation: true
