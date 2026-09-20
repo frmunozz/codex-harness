@@ -26,6 +26,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-20:** Refined global response-style guidance to favor concise,
+  direct, low-filler technical communication without reducing reasoning depth,
+  validation, clarity, or required detail.
 - **2026-09-20:** Broadened advisor orchestration to cover high-impact decision
   and validation checkpoints, added bounded clarification dialogue and
   consultation-scoped agent cleanup, raised Astra advisor reasoning to medium,
