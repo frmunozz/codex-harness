@@ -58,7 +58,7 @@ Directory backups include the full directory tree. If a directory did not exist,
    - The installer intentionally does not copy or edit `config.toml`. If the config is missing, propose creating it from the template. If it exists, inspect it fully and produce a minimal merge.
    - Use this as the target baseline, while treating explicit existing values as user-owned:
      - Top level: `approval_policy = "on-request"`, `sandbox_mode = "workspace-write"`, `personality = "pragmatic"`, `web_search = "live"`, `project_doc_max_bytes = 65536`.
-     - `[agents]`: `max_depth = 1`, `max_threads = 6`.
+     - `[agents]`: `max_depth = 1`, `max_concurrent_threads_per_session = 12`.
      - `[features]`: `apps`, `goals`, `hooks`, `multi_agent`, `undo`, and `workspace_dependencies` enabled.
      - `[desktop]`: `followUpQueueMode = "queue"`, `show-context-window-usage = true`.
      - `[memories]`: `generate_memories = false`, `use_memories = false`.
