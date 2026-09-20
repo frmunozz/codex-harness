@@ -1,0 +1,21 @@
+CHANGELOG.md
+  s_9d1bb53a8262ac::t_50bae90fa3df31 29-31
+.agents/skills/codex-harness-install/SKILL.md
+  s_9d1bb53a8262ac::t_29298363350910 61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "45c3cce3a5b938767df30d29a96f447827c7e276",
+  "prompts": {},
+  "sessions": {
+    "s_9d1bb53a8262ac": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c0ae-493b-76e3-9787-5dcf3db227b5",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
