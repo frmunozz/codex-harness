@@ -1,0 +1,16 @@
+CHANGELOG.md
+  h_0810b9cae0751d 29-31
+instructions/AGENTS.md
+  h_0810b9cae0751d 25-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f41dd03ead20f8ed8ca012e093b186cccdba4588",
+  "prompts": {},
+  "humans": {
+    "h_0810b9cae0751d": {
+      "author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
