@@ -11,6 +11,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Added
 
+- **2026-09-26:** Added the explicit `pr-review-loop` skill and read-only Astra
+  `review-triage` agent for bounded review iterations, evidence-based finding
+  dispositions, local fix commits, and a per-iteration Scope/Drift gate.
 - **2026-09-19:** Added the harness-owned `git-commit` skill with supporting
   agent metadata for reviewable Conventional Commit workflows.
 - **2026-09-19:** Added the read-only `codex-harness-audit` skill, policy
@@ -26,6 +29,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-26:** Migrated the deep-worker profile to GPT-6 Sol and the
+  reviewer/explorer profiles to GPT-6 Luna, using Luna's supported `max`
+  reasoning effort; set review-triage to Astra `low` reasoning.
 - **2026-09-20:** Refined global response-style guidance to favor concise,
   direct, low-filler technical communication without reducing reasoning depth,
   validation, clarity, or required detail.

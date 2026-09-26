@@ -16,7 +16,8 @@
       "imagegen",
       "screenshot",
       "playwright",
-      "git-commit"
+      "git-commit",
+      "pr-review-loop"
     ]
   },
   {
