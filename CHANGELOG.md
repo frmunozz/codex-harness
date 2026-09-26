@@ -29,6 +29,8 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-26:** Advanced the pinned harness skill source to the published
+  commit containing `pr-review-loop`.
 - **2026-09-26:** Migrated the deep-worker profile to GPT-6 Sol and the
   reviewer/explorer profiles to GPT-6 Luna, using Luna's supported `max`
   reasoning effort; set review-triage to Astra `low` reasoning.
