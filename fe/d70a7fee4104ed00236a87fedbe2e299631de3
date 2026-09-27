@@ -1,0 +1,37 @@
+agents/review-triage.toml
+  s_0a78533bf5a889::t_64bb1708baa9f4 1-39
+CHANGELOG.md
+  s_0a78533bf5a889::t_64bb1708baa9f4 14-16,32-41
+agents/explorer.toml
+  s_0a78533bf5a889::t_64bb1708baa9f4 19-20
+agents/reviewer.toml
+  s_0a78533bf5a889::t_64bb1708baa9f4 14-15
+plugins/manifest.json
+  s_0a78533bf5a889::t_64bb1708baa9f4 9-10
+README.md
+  s_0a78533bf5a889::t_64bb1708baa9f4 117-123
+skills/remote-skills.json
+  s_0a78533bf5a889::t_64bb1708baa9f4 3-4,19-20
+agents/deep-worker.toml
+  s_0a78533bf5a889::t_64bb1708baa9f4 21
+skills/custom/pr-review-loop/agents/openai.yaml
+  s_0a78533bf5a889::t_64bb1708baa9f4 1-7
+skills/custom/pr-review-loop/SKILL.md
+  s_0a78533bf5a889::t_64bb1708baa9f4 1-221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fed70a7fee4104ed00236a87fedbe2e299631de3",
+  "prompts": {},
+  "sessions": {
+    "s_0a78533bf5a889": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e408-32f5-7860-b656-6a49a115ac8c",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
