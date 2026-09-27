@@ -45,10 +45,12 @@ Freeze PR brief, base, and local ledger
                (never push)
                     ▼
              Update ledger; repeat
-          at most 5 fix iterations
+         at most 5 fix iterations
                     ▼
          one terminal review-only wave
 ```
+
+If Native Codex is still active at its 20-minute checkpoint, pause the review loop, keep the same process running, and resume only after the user confirms that it has finished.
 
 ## Loop invariants
 
@@ -58,7 +60,8 @@ Freeze PR brief, base, and local ledger
 - Only findings classified `address` may create implementation work. A regression caused by the PR remains addressable even when its repair is outside the original feature scope.
 - Workers never commit or push. The root integrates, validates, completes the Scope/Drift gate, and makes one local commit per accepted fix iteration. Never push.
 - Use independent workers only when their tasks and write surfaces do not overlap. Use one worker for coupled or linear fixes.
-- A failed or timed-out review lane is incomplete, never clean. Do not declare the PR review complete while any required lane remains incomplete.
+- A failed review lane is incomplete, never clean. Do not declare the PR review complete while any required lane remains incomplete.
+- Native Codex is a gate for the loop: do not triage, implement, commit, or start another review wave until it returns a complete successful report. If it exits unsuccessfully or without a final report, stop the loop without retrying. If it remains active at 20 minutes, use the human checkpoint in Section 2 and resume only when the same process finishes successfully.
 - Read the ledger before each stage and update it after each reviewer, explorer, triage, worker, validation, drift, or commit handoff.
 - Stop when a complete review wave has no findings classified `address`; deferred and ignored findings may remain and must be reported.
 
@@ -106,7 +109,22 @@ Review the same frozen `base...HEAD` range in each lane. If local changes are pa
 
 Run four independent outputs:
 
-1. **Native Codex review:** from the root, run `codex exec review --base <frozen-base-ref-or-sha>` with a 10-minute wall-clock timeout. If staged, unstaged, or untracked candidate changes exist, also run `codex exec review --uncommitted` with the same timeout and include that result in the Codex lane. These are separate invocations; do not combine `--base` and `--uncommitted`. Do not ask a subagent to invoke the App's `/review` command. If the CLI is missing, fails, hangs, or returns an incomplete result, record the lane as incomplete; do not interpret empty output as approval.
+1. **Native Codex review:** from the root, pin the review to `gpt-6-sol` at `high` reasoning effort:
+
+   ```sh
+   codex exec review --base <frozen-base-ref-or-sha> --model gpt-6-sol \
+     -c 'model_reasoning_effort="high"'
+   ```
+
+   Do not append a positional prompt; use the CLI review's built-in instructions.
+
+   Use the same model and effort for a separate `--uncommitted` invocation when staged, unstaged, or untracked candidate changes need review. Do not combine `--base` and `--uncommitted`. Do not ask a subagent to invoke the App's `/review` command.
+
+   Run Native Codex in a persistent exec session and retain its session ID and latest output. Do not wrap it in a shell timeout. The 20-minute limit is a human checkpoint, not a process timeout:
+
+   - If the process is still active at 20 minutes, do not kill, interrupt, or restart it. Record its session ID, elapsed time, and latest output in the ledger. Pause all review-loop progression: do not triage, implement, commit, or start another wave. Ask the user to inspect the live review and, if it is progressing, to notify you when that same process finishes. Wait for that notification before resuming.
+   - When the user reports completion, collect the final output and exit status from the existing session. Resume only if the process returned a complete successful report. If it failed, exited without a final report, or the user reports it is not progressing, stop the loop and report it as incomplete. Never retry the Native review automatically.
+   - If the CLI is missing, exits unsuccessfully, or exits without a complete final report before the checkpoint, stop the loop and report it as incomplete. Do not continue using findings from other lanes until Native Codex succeeds.
 2. **Ponytail review:** use the installed Ponytail review skill as one independent reviewer. Keep its focus on unnecessary complexity, abstractions, dependencies, and code that can be removed. If the skill is unavailable, record the lane as incomplete rather than substituting another reviewer.
 3. **Matt Pocock Standards review.**
 4. **Matt Pocock Spec review.**
@@ -121,7 +139,7 @@ Assign stable IDs such as `R1-F1` (round and finding number). Preserve each revi
 
 Compare new results with the ledger. Mark findings as new, repeated, already fixed, deferred again, or materially changed. Re-triage a repeated finding when the relevant code or evidence has changed. Never count an unavailable reviewer as having found zero issues.
 
-If any required lane is incomplete, retry that lane once after checking its specific failure. Continue triage and safe fixes for findings already supported by complete lanes, but do not declare the review clean. If a lane remains incomplete after the retry, end with an incomplete-review report after handling any approved work that can safely proceed.
+If a non-Native required lane is incomplete, retry it once after checking its specific failure. Native Codex follows the no-retry human-checkpoint procedure above. Never count an unavailable reviewer as having found zero issues.
 
 ## 3. Gather only missing evidence
 
@@ -197,6 +215,7 @@ Summarize:
 - final Scope/Drift verdicts;
 - deferred and ignored findings with concise reasons;
 - unresolved addressable findings or blockers;
+- Native Codex model, reasoning effort, elapsed time, exit status, and any human checkpoint;
 - the ledger path.
 
 Never describe an incomplete review wave as clean or approved.
