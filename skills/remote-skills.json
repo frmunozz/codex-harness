@@ -1,7 +1,7 @@
 [
   {
-    "source": "https://github.com/frmunozz/codex-harness",
-    "ref": "f41dd03ead20f8ed8ca012e093b186cccdba4588",
+    "source": "https://github.com/frmunozz/codex-harness.git",
+    "ref": "866f780ea1537a7b300ebce214871b521ef2c037",
     "skills": [
       "worker-delegation",
       "advisor-orchestrator",
@@ -16,7 +16,8 @@
       "imagegen",
       "screenshot",
       "playwright",
-      "git-commit"
+      "git-commit",
+      "pr-review-loop"
     ]
   },
   {

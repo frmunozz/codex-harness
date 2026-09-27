@@ -1,0 +1,7 @@
+interface:
+  display_name: "PR Review Loop"
+  short_description: "Run bounded PR reviews, triage, fixes, and scope checks"
+  default_prompt: "Use the PR Review Loop for the current pull request. Freeze the goal and base, record a ledger under Git metadata, run independent review lanes, gather only missing evidence, triage with review-triage, fix approved findings in at most five iterations, validate, run the Scope/Drift gate, and commit locally without pushing."
+
+policy:
+  allow_implicit_invocation: false

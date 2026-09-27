@@ -114,6 +114,13 @@ Repository skills:
 npx --yes skills add <harness-source/tree/commit> --global --agent '*' --skill <name> ... --yes
 ```
 
+Use `pr-review-loop` for an explicit, bounded review → evidence → triage → fix
+workflow. It supports up to five fix iterations plus one terminal review-only
+pass, keeps its ledger under Git metadata, and creates local commits without
+pushing. After this skill is published in a harness commit, advance the
+self-referential harness pin with `/codex-harness-remote-update` before using
+the installer.
+
 The harness source and commit are the first entry in
 [`skills/remote-skills.json`](skills/remote-skills.json); use the install skill
 to expand the selected names. Do not install repository skills from `./skills`.

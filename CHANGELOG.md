@@ -11,6 +11,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Added
 
+- **2026-09-26:** Added the explicit `pr-review-loop` skill and read-only Astra
+  `review-triage` agent for bounded review iterations, evidence-based finding
+  dispositions, local fix commits, and a per-iteration Scope/Drift gate.
 - **2026-09-19:** Added the harness-owned `git-commit` skill with supporting
   agent metadata for reviewable Conventional Commit workflows.
 - **2026-09-19:** Added the read-only `codex-harness-audit` skill, policy
@@ -26,6 +29,16 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-27:** Updated `pr-review-loop` to pin Native Codex reviews to
+  GPT-6 Sol at high reasoning effort, pause for a human checkpoint after 20
+  minutes, and avoid automatic retries; reconciled plugin IDs and the harness
+  source URL, then advanced the harness pin to the published review-loop
+  commit.
+- **2026-09-26:** Advanced the pinned harness skill source to the published
+  commit containing `pr-review-loop`.
+- **2026-09-26:** Migrated the deep-worker profile to GPT-6 Sol and the
+  reviewer/explorer profiles to GPT-6 Luna, using Luna's supported `max`
+  reasoning effort; set review-triage to Astra `low` reasoning.
 - **2026-09-20:** Updated the install config baseline to use
   `max_concurrent_threads_per_session = 12` instead of deprecated
   `max_threads`.
