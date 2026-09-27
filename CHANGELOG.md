@@ -32,7 +32,8 @@ No tagged release exists yet, so the reconstructed history remains under
 - **2026-09-27:** Updated `pr-review-loop` to pin Native Codex reviews to
   GPT-6 Sol at high reasoning effort, pause for a human checkpoint after 20
   minutes, and avoid automatic retries; reconciled plugin IDs and the harness
-  source URL while retaining the last published skill pin.
+  source URL, then advanced the harness pin to the published review-loop
+  commit.
 - **2026-09-26:** Advanced the pinned harness skill source to the published
   commit containing `pr-review-loop`.
 - **2026-09-26:** Migrated the deep-worker profile to GPT-6 Sol and the
