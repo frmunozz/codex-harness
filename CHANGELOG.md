@@ -29,6 +29,9 @@ No tagged release exists yet, so the reconstructed history remains under
 
 ### Changed
 
+- **2026-09-30:** Migrated reviewer, deep-worker, advisor, and review-triage
+  to GPT-6.1 Sol with low, medium, xhigh, and xhigh reasoning respectively;
+  removed stale model-specific advisor and triage descriptions.
 - **2026-09-27:** Updated `pr-review-loop` to pin Native Codex reviews to
   GPT-6 Sol at high reasoning effort, pause for a human checkpoint after 20
   minutes, and avoid automatic retries; reconciled plugin IDs and the harness

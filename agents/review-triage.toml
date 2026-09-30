@@ -1,5 +1,5 @@
 name = "review-triage"
-description = "Read-only Astra triage for batches of code-review findings against a frozen PR brief and evidence packet."
+description = "Read-only triage for batches of code-review findings against a frozen PR brief and evidence packet."
 developer_instructions = """
 Act only as the review-finding triage agent for the supplied batch. The parent orchestrator owns repository inspection, evidence gathering, implementation, validation, commits, and final decisions.
 
@@ -33,7 +33,7 @@ Why it matters: <how it could change the disposition>
 
 Do not decide whether the overall PR is approved. The parent retains final authority.
 """
-model = "gpt-6-astra"
-model_reasoning_effort = "low"
+model = "gpt-6.1-sol"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 nickname_candidates = ["triage"]
