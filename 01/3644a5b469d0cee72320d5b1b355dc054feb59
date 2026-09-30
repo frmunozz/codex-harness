@@ -1,0 +1,27 @@
+CHANGELOG.md
+  s_fa269210a53ecd::t_60cf50df741fb3 32-34
+agents/deep-worker.toml
+  s_fa269210a53ecd::t_60cf50df741fb3 21
+agents/advisor.toml
+  s_fa269210a53ecd::t_60cf50df741fb3 2,6,41-42
+agents/reviewer.toml
+  s_fa269210a53ecd::t_60cf50df741fb3 14-15
+agents/review-triage.toml
+  s_fa269210a53ecd::t_60cf50df741fb3 2,36-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "013644a5b469d0cee72320d5b1b355dc054feb59",
+  "prompts": {},
+  "sessions": {
+    "s_fa269210a53ecd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f044-141a-74b1-b510-3c9c01b71378",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "frmunozz <frmunozz@users.noreply.github.com>"
+    }
+  }
+}
